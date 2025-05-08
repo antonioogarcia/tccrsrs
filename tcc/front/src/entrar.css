@@ -27,7 +27,7 @@ header p {
 }
 header p:hover {
     font-size: 2.6vh;
-    color: rgb(0, 183, 255);
+    color: #197f5a;
 }
 .logo {
     height: 200vh;
@@ -47,10 +47,10 @@ a {
     text-decoration: underline;
 }
 .cadastrar {
-    background-color: rgb(0, 183, 255);
+    background-color: #197f5a;
     width: 12vw;
     height: 6vh;
-    outline: solid 3px rgb(0, 183, 255);
+    outline: solid 3px #197f5a;
     font-family: "Montserrat", serif;
     font-weight: 500;
     border-radius: 6px;
@@ -58,17 +58,18 @@ a {
     cursor: pointer;
     transition: ease-in-out 0.4s;
     margin-left: 25%;
-    color: rgba(0, 0, 0, 0.607);
+    color: #f3f3f3;
 }
 .cadastrar:hover {
     height: 7vh;
+    width: 13vw;
 }
 .container {
     display: grid;
     justify-content: center;
     align-items: center;
     margin-top: 5%;
-    outline: solid 1.4px rgb(15, 15, 15);
+    outline: solid 1px rgb(15, 15, 15);
     width: 40vw;
     height: 60vh;
     position: relative;
@@ -79,7 +80,7 @@ a {
 input {
     padding: 3px;
     font-family: "Montserrat", serif;
-    border-bottom:  solid 1px rgb(0, 183, 255);
+    border-bottom:  solid 1px #197f5a;
     border-top: none;
     border-left: none;
     border-right: none;
@@ -89,7 +90,7 @@ input:focus {
     outline: none;
 }
 input::placeholder {
-    color: rgb(0, 183, 255);
+    color: #197f5a;
 }
 .emailSenha {
     display: grid;
