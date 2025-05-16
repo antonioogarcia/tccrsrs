@@ -4,28 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Truco cerveja chatgpt</title>
-    <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="/tcc/front/assets/logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="/tcc/front/src/style/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <script src="https://kit.fontawesome.com/98b6f9f041.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
  <header>
-    <img src="logo.png" alt="" class="logo">
+    <img src="/tcc/front/assets/logo.png" alt="" class="logo">
     <div class="esquerda">
         <a href="sobrenos.html"><p>Sobre Nós</p>
         <a href="contato.html"><p>Fale Conosco</p>
         <a href="entrar.html"><button type="button" class="entrar">Entre</button></a>
-        <a href="/front/src/cadastar.html"><button type="button" class="cadastrar">Cadastre-se</button></a>
+        <a href="cadastar.html"><button type="button" class="cadastrar">Cadastre-se</button></a>
     </div>
  </header>
  <main>
-    <div class="containerCarrossel">
+    <div class="containerCarrossel">   
+        <button id="setaE"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="containerImgsCarrossel">
+                <img src="/tcc/front/assets/carrossel0.png" class="slider on" alt="">
+                <img src="/tcc/front/assets/carrossel1.jpg" class="slider" alt="">
+                <img src="/tcc/front/assets/carrossel2.jpg" class="slider" alt="">
+                <img src="/tcc/front/assets/carrossel3.jpg" class="slider" alt="">
+        </div>     
+        <button id="setaD"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
     <div class="assunto2">
         <h1>Seu melhor amigo pode estar a um clique.</h1>
@@ -40,16 +48,19 @@
         <h1 class="titulo">Nossos pilares</h1>
         <div class="imgs">
             <div class="imgTexto">
-                <img src="" alt="">
-                <p></p>
+                <img src="/tcc/front/assets/meninamulherdapelepreta.png" alt="">
+                <h1 class="subtitulo">Inclusão</h1>
+                <p class="imgsP">Body text for whatever you’d like to add more to the subheading. </p>
             </div>
             <div class="imgTexto">
-                <img src="" alt="">
-                <p></p>
+                <img src="/tcc/front/assets/galinha.png" alt="">
+                <h1 class="subtitulo">Amor</h1>
+                <p class="imgsP">Body text for whatever you’d like to add more to the subheading.</p>
             </div>
             <div class="imgTexto">
-                <img src="" alt=""> 
-                <p></p> 
+                <img src="/tcc/front/assets/criancapreta.png" alt=""> 
+                <h1 class="subtitulo">Bondade</h1>
+                <p class="imgsP">Body text for whatever you’d like to add more to the subheading.</p> 
          </div>
         </div>
     </div>
@@ -61,7 +72,9 @@
             when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
             It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
             It was popularised in the 1960s.</p>
-            <img class="cachorroSol" src="cachorrosol.png" alt="">
+            <div class="cachorroSolDiv">
+                <img class="cachorroSol" src="/tcc/front/assets/cachorrosol.png" alt="">
+            </div>
     </div>
     <div class="linha"></div>
     <div class="slider">
@@ -70,5 +83,6 @@
     <footer>
     </footer>
  </main>
+ <script src="/tcc/front/src/script/index.js" defer></script> 
 </body>
 </html>
