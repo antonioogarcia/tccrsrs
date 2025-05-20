@@ -1,3 +1,4 @@
+// carrossel
 const slider = document.querySelectorAll('.slider');
 const setaE = document.getElementById('setaE');
 const setaD = document.getElementById('setaD');
@@ -14,7 +15,7 @@ function mostrar() {
 
 function proxImg() {
     esconder()
-    if(atualImg === slider.length -1) {
+    if(atualImg === slider.length -2) {
         atualImg = 0
     } else {
         atualImg++
@@ -34,3 +35,5 @@ function voltarImg() {
 
 setaD.addEventListener('click', proxImg)
 setaE.addEventListener('click', voltarImg)
+
+//
