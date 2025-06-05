@@ -3,7 +3,7 @@
     padding: 0;
 }
 body {
-    color: #f3f3f3;
+    color: #f1f1f1;
     color: #1f1f1f;
     font-family: "Inter", sans-serif;
     padding: 0;
@@ -87,6 +87,7 @@ header p:hover {
     width: 8.5vw;
     height: 5.5vh;
 }
+
 .containerCarrossel {
     display: flex;
     align-items: center;
