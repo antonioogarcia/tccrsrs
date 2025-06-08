@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truco cerveja chatgpt</title>
+    <link rel="shortcut icon" href="/tcc/front/assets/logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="/tcc/front/src/style/teste.css">
+    <script src="https://kit.fontawesome.com/98b6f9f041.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+     <header>
+        <a href="/tcc/front/src/index.html"><i class="fa-solid fa-house"></i></a>
+        <img src="/tcc/front/assets/logo.png" alt="" class="logo">
+    </header>
+    <main>
+        <div class="containerTeste">
+        <form action="" method="post"><br>
+        <h1>1. Identificação básica</h1><br><br>
+
+        <p>Nome do animal:</p>
+        <input type="text" name="nome"><br><br>
+
+        <p>Fotos do animal (.JPG ou .PNG)</p>
+        <input type="file" name=""><br><br>
+
+        <p>2. Espécie:</p>
+        <input type="radio" name="especie" id="cao" value="cao">
+        <label for="cao">Cão</label><br>
+        <input type="radio" name="especie" id="gato" value="gato">
+        <label for="gato">Gato</label><br>
+        <input type="radio" name="especie" id="outro" value="outro">
+        <label for="outro">Outro:</label> <input type="text" name="especie_outro"><br><br>
+
+        <p>3. Sexo:</p>
+        <input type="radio" name="sexo" id="macho" value="macho">
+        <label for="macho">Macho</label><br>
+        <input type="radio" name="sexo" id="femea" value="femea">
+        <label for="femea">Fêmea</label><br><br>
+
+        <p>4. Idade aproximada:</p>
+        <input type="radio" name="idade" id="filhote" value="filhote">
+        <label for="filhote">Filhote (até 1 ano)</label><br>
+        <input type="radio" name="idade" id="jovem" value="jovem">
+        <label for="jovem">Jovem (1 a 3 anos)</label><br>
+        <input type="radio" name="idade" id="adulto" value="adulto">
+        <label for="adulto">Adulto (3 a 7 anos)</label><br>
+        <input type="radio" name="idade" id="idoso" value="idoso">
+        <label for="idoso">Idoso (acima de 7 anos)</label><br><br>
+
+        <p>5. Raça:</p>
+        <input type="radio" name="raca" id="definida" value="definida">
+        <label for="definida">Raça definida:</label> <input type="text" name="raca_definida"><br>
+        <input type="radio" name="raca" id="srd" value="srd">
+        <label for="srd">SRD (Sem Raça Definida)</label><br><br>
+
+        <h1>2. Características físicas</h1><br><br>
+
+        <p>6. Porte:</p>
+        <input type="radio" name="porte" id="pequeno" value="pequeno">
+        <label for="pequeno">Pequeno</label><br>
+        <input type="radio" name="porte" id="medio" value="medio">
+        <label for="medio">Médio</label><br>
+        <input type="radio" name="porte" id="grande" value="grande">
+        <label for="grande">Grande</label><br><br>
+
+        <p>7. Tipo de pelagem:
+        <input type="radio" name="pelagem" id="curto" value="curto">
+        <label for="curto">Pelo curto</label><br>
+        <input type="radio" name="pelagem" id="medio" value="medio">
+        <label for="medio">Pelo médio</label><br>
+        <input type="radio" name="pelagem" id="longo" value="longo">
+        <label for="longo">Pelo longo</label><br>
+        <input type="radio" name="pelagem" id="hipo" value="hipo">
+        <label for="hipo">Hipoalergênico (ex: Poodle)</label><br><br>
+
+        <p>8. Cor da pelagem:</p>
+        <input type="radio" name="cor" id="clara" value="clara">
+        <label for="clara">Clara (branco, bege, dourado…)</label><br>
+        <input type="radio" name="cor" id="escura" value="escura">
+        <label for="escura">Escura (preto, cinza, marrom…)</label><br>
+        <input type="radio" name="cor" id="mesclada" value="mesclada">
+        <label for="mesclada">Mesclada / Tigrada</label><br>
+        <input type="radio" name="cor" id="rajada" value="rajada">
+        <label for="rajada">Rajada / Malhada</label><br>
+        <input type="radio" name="cor" id="exotica" value="exotica">
+        <label for="exotica">Exótica / Diferente</label><br><br>
+
+        <p>9. O animal solta muito pelo?</p>
+        <input type="radio" name="pelo" id="muito" value="muito">
+        <label for="muito">Sim, bastante</label><br>
+        <input type="radio" name="pelo" id="pouco" value="pouco">
+        <label for="pouco">Um pouco</label><br>
+        <input type="radio" name="pelo" id="muitopouco" value="muitopouco">
+        <label for="muitopouco">Muito pouco</label><br>
+        <input type="radio" name="pelo" id="nada" value="nada">
+        <label for="nada">Praticamente nada</label><br><br>
+
+        <h1>3. Saúde e cuidados</h1><br><br>
+
+        <p>10. O animal é castrado?</p>
+        <input type="radio" name="castrado" id="simcastrado" value="sim">
+        <label for="simcastrado">Sim</label><br>
+        <input type="radio" name="castrado" id="naocasrado" value="nao">
+        <label for="naocasrado">Não</label><br>
+        <input type="radio" name="castrado" id="sera" value="sera">
+        <label for="sera">Será castrado antes da adoção</label><br><br>
+
+        <p>11. O animal possui alguma condição de saúde?</p>
+        <input type="radio" name="saude" id="simesp" value="sim">
+        <label for="simesp">Sim (especifique):</label> <input type="text" name="saude_especificar"><br>
+        <input type="radio" name="saude" id="naosaude" value="nao">
+        <label for="naosaude">Não</label><br>
+        <input type="radio" name="saude" id="tratamento" value="tratamento">
+        <label for="tratamento">Em tratamento</label><br>
+        <input type="radio" name="saude" id="historico" value="historico">
+        <label for="historico">Histórico de doença já tratada</label><br><br>
+
+        <p>12. Necessita de cuidados especiais?</p>
+        <input type="radio" name="cuidados" id="simcuidados" value="sim">
+        <label for="simcuidados">Sim (alimentação, medicação, etc.)</label><br>
+        <input type="radio" name="cuidados" id="naocuidados" value="nao">
+        <label for="naocuidados">Não</label><br><br>
+
+        <p>13. Já foi vacinado?</p>
+        <input type="radio" name="vacinado" id="completo" value="completo">
+        <label for="completo">Sim, com carteira atualizada</label><br>
+        <input type="radio" name="vacinado" id="parcial" value="parcial">
+        <label for="parcial">Parcialmente vacinado</label><br>
+        <input type="radio" name="vacinado" id="naovacinado" value="nao">
+        <label for="naovacinado">Não vacinado</label><br><br>
+
+        <h1>4. Personalidade e comportamento</h1><br><br>
+
+        <p>14. Nível de energia:</p>
+        <input type="radio" name="energia" id="baixa" value="baixa">
+        <label for="baixa">Baixo (calmo, tranquilo)</label><br>
+        <input type="radio" name="energia" id="media" value="media">
+        <label for="media">Médio (brinca às vezes, gosta de passear)</label><br>
+        <input type="radio" name="energia" id="alta" value="alta">
+        <label for="alta">Alto (muito ativo, agitado, brincalhão)</label><br><br>
+
+        <p>15. É sociável com:</p><br>
+        <p>Crianças:</p>
+        <input type="radio" name="criancas" id="criancassim" value="sim">
+        <label for="criancassim">Sim</label><br>
+        <input type="radio" name="criancas" id="criancasnao" value="nao">
+        <label for="criancasnao">Não</label><br>
+        <input type="radio" name="criancas" id="criancasnaotestado" value="nao_testado">
+        <label for="criancasnaotestado">Não testado</label><br>
+
+        <p>Outros cães:</p>
+        <input type="radio" name="caes" id="caessim" value="sim">
+        <label for="caessim">Sim</label><br>
+        <input type="radio" name="caes" id="caesnao" value="nao">
+        <label for="caesnao">Não</label><br>
+        <input type="radio" name="caes" id="caesnaotestado" value="nao_testado">
+        <label for="caesnaotestado">Não testado</label><br>
+
+        <p>Gatos:</p>
+        <input type="radio" name="gatos" id="gatossim" value="sim">
+        <label for="gatossim">Sim</label><br>
+        <input type="radio" name="gatos" id="gatosnao" value="nao">
+        <label for="gatosnao">Não</label><br>
+        <input type="radio" name="gatos" id="gatosnaotestado" value="nao_testado">
+        <label for="gatosnaotestado">Não testado</label><br><br>
+
+        <p>16. Como se comporta com desconhecidos:</p>
+        <input type="radio" name="desconhecidos" id="receptivo" value="receptivo">
+        <label for="receptivo">Muito receptivo</label><br>
+        <input type="radio" name="desconhecidos" id="timido" value="timido">
+        <label for="timido">Tímido no início, mas se adapta</label><br>
+        <input type="radio" name="desconhecidos" id="medroso" value="medroso">
+        <label for="medroso">Desconfiado e medroso</label><br>
+        <input type="radio" name="desconhecidos" id="agressivo" value="agressivo">
+        <label for="agressivo">Agressivo (em observação/tratamento)</label><br><br>
+
+        <p>17. Já recebeu adestramento?</p>
+        <input type="radio" name="adestramento" id="basico" value="basico">
+        <label for="basico">Sim, básico</label><br>
+        <input type="radio" name="adestramento" id="avancado" value="avancado">
+        <label for="avancado">Sim, avançado</label><br>
+        <input type="radio" name="adestramento" id="naoadestrado" value="nao">
+        <label for="naoadestrado">Não</label><br>
+        <input type="radio" name="adestramento" id="emprocesso" value="em_process">
+        <label for="emprocesso">Em processo de adestramento</label><br><br>
+
+        <p>18. Comportamentos conhecidos:</p>
+        <input type="checkbox" name="comportamentos[]" id="latido" value="latido">
+        <label for="latido">Latido/miado excessivo</label><br>
+        <input type="checkbox" name="comportamentos[]" id="medo" value="medo">
+        <label for="medo">Medo de barulhos</label><br>
+        <input type="checkbox" name="comportamentos[]" id="foge" value="foge">
+        <label for="foge">Foge com facilidade</label><br>
+        <input type="checkbox" name="comportamentos[]" id="destruidor" value="destruidor">
+        <label for="destruidor">Destrói objetos</label><br>
+        <input type="checkbox" name="comportamentos[]" id="higiene" value="higiene">
+        <label for="higiene">Faz xixi/cocô no lugar certo</label><br>
+        <input type="checkbox" name="comportamentos[]" id="carente" value="carente">
+        <label for="carente">É muito carente</label><br>
+        <input type="checkbox" name="comportamentos[]" id="comefast" value="comefast">
+        <label for="comefast">Come muito rápido</label><br>
+        <input type="checkbox" name="comportamentos[]" id="dorme" value="dorme">
+        <label for="dorme">Dorme a maior parte do tempo</label><br>
+        <input type="checkbox" name="comportamentos[]" id="ansiedade" value="ansiedade">
+        <label for="ansiedade">Ansiedade de separação</label><br><br>
+
+        <h1>5. Outras informações</h1><br><br>
+
+        <p>19. Onde o animal está atualmente?</p>
+        <input type="radio" name="local" id="abrigo" value="abrigo">
+        <label for="abrigo">Em abrigo</label><br>
+        <input type="radio" name="local" id="lar_temp" value="lar_temp">
+        <label for="lar_temp">Em lar temporário</label><br>
+        <input type="radio" name="local" id="casa_resp" value="casa_resp">
+        <label for="casa_resp">Na casa do responsável</label><br>
+        <input type="radio" name="local" id="outrolocal" value="outro">
+        <label for="outrolocal">Outro:</label> <input type="text" name="outro_local"><br><br>
+
+        <p>20. Há alguma restrição para o tipo de lar ideal?</p>
+        <input type="radio" name="restricao" id="naorestricao" value="nao">
+        <label for="naorestricao">Não</label><br>
+        <input type="radio" name="restricao" id="simrestricao" value="sim">
+        <label for="simrestricao">Sim (especificar):</label> <input type="text" name="restricao_texto"><br><br>
+
+        <p>21. Observações adicionais (opcional):</p>
+        <textarea name="observacoes" rows="4" cols="50"></textarea><br><br>
+        <a href="principal.html"><button type="submit">Enviar</button></a>
+        </form>
+     </div>
+    </main>
+    <br><br><br>
+</body>
+</html>

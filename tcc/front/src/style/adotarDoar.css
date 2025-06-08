@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    color: #f1f1f1;
+    color: #1f1f1f;
+    font-family: "Inter", sans-serif;
+    padding: 0;
+    overflow-x: hidden;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Montserrat", serif;
+    height: 10vh;
+    color: black;
+    background-color: white;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.267);
+    font-weight: 500;
+    align-items: center;
+    padding: 0 40px;
+}
+a {
+    text-decoration: none;
+    color: unset;
+}
+header p {
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+    transition: ease-in-out 0.4s;
+}
+header p:hover {
+    font-size: 2.6vh;
+    color: #197f5a;
+}
+.logo {
+    height: 20vh;
+    margin-top: 10px;
+    margin: 0 auto;
+}
+.entrar {
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-top: -5%;
+    width: 50vw;
+    height: 60vh;
+    position: relative;
+    color: black;
+}
+h1 {
+    font-size: 1rem;
+}
+.assunto3 {
+    margin-top: 100px;
+    text-align: center;
+    margin-bottom: 30px ;
+}
+.assunto3 img {
+    height: 20vh;
+}
+.imgs {
+    display: flex; 
+    justify-content: space-evenly;
+    margin-top: 20px;
+    margin: 0 auto;
+    margin-top: 30px;
+    gap: 40px;
+}
+.subtitulo {
+    font-size: 3vh;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.imgsP {
+    margin: 0px 20px;
+}
+.titulo {
+    text-align: center;
+    font-size: 4vh;
+}
+.imgTexto {
+    padding-top: 15%;
+    width: 20vw;
+    height: 45vh;
+    border: solid #197f5a 2px;
+    border-radius: 8px;
+    transition: 0.3s ease-in;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.267);
+}
+.imgTexto:hover {
+    width: 20.2vw;
+    height: 45.2vh;
+}
+.fa-house {
+    color: black;
+    font-size: 1.5rem;
+}
