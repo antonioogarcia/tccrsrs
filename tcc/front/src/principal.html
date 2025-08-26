@@ -1,42 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Truco cerveja chatgpt</title>
+    <title>Página Principal - Esmeralda</title>
     <link rel="shortcut icon" href="/tcc/front/assets/logo.jpg" type="image/x-icon">
     <link rel="stylesheet" href="/tcc/front/src/style/principal.css">
     <script src="https://kit.fontawesome.com/98b6f9f041.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-     <header>
-        <img src="/tcc/front/assets/logo.png" alt="" class="logo">
+    <!-- HEADER -->
+    <header>
+        <img src="/tcc/front/assets/logo.png" alt="Logo Esmeralda" class="logo">
+        <i class="fa-regular fa-user icon-perfil"></i>
     </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
     <main>
-      <h1>Olá, usário!</h1>
-      <h2>Estes são os animaizinhos que mais combinam com você:</h2>
-      <br><br><br>
+        <h1>Olá, <span class="usuario">usuário!</span></h1>
+        <h2>Estes são os <span class="textoVerde">animaizinhos</span> que mais combinam com você:</h2>
+        
+        <div class="recomendacaofiltro">
+            <div class="recomendacao">
+                <img src="/tcc/front/assets/gatobo.png" class="gatobo">
+                <p>: Talvez seja melhor um animal de pequeno porte para seu apartamento</p>
+            </div>
+            <div class="filtro">
+                <i class="fa-solid fa-filter"></i>
+                <span>Filtrar por:</span>
+            </div>
+        </div>
+        <div class="linhaVerde"></div>
+        <br>
         <div class="containerAnimais">
-            <div class="animais">
-                <img src="/tcc/front/assets/ignis.png" alt="" class="animal">
-                <h1 class="nome">Ignis</h1>
-                <p id="compatibilidade">Taxa de compatibilidade:</p>
-                <a href=""><button class="adotar">Adotar!</button></a>
+            <div class="animal-card">
+                <img src="/tcc/front/assets/ignis.png" alt="Ignis" class="animal">
+                <p class="compatibilidade">Compatibilidade: <span>90%</span></p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 90%;"></div>
+                </div>
+                <div class="acoes">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="nomeLocalizacao">
+                <h3 class="nome">Ignis <i class="fa-solid fa-venus"></i></h3>
+                <p class="localizacao">Santa Isabel, SP</p>
+                 </div>
+                <button class="adotar">Quero adotar!</button>
             </div>
-            <div class="animais">
-                <img src="/tcc/front/assets/ignis.png" alt="" class="animal">
-                <h1 class="nome">Ignis</h1>
-                <p id="compatibilidade">Taxa de compatibilidade:</p>
-                <a href=""><button class="adotar">Adotar!</button></a>
+
+            <div class="animal-card">
+                <img src="/tcc/front/assets/ignis.png" alt="Ignis" class="animal">
+                <p class="compatibilidade">Compatibilidade: <span>90%</span></p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 90%;"></div>
+                </div>
+                <div class="acoes">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="nomeLocalizacao">
+                <h3 class="nome">Ignis <i class="fa-solid fa-venus"></i></h3>
+                <p class="localizacao">Santa Isabel, SP</p>
+                </div>
+                <button class="adotar">Quero adotar!</button>
             </div>
-            <div class="animais">
-                <img src="/tcc/front/assets/ignis.png" alt="" class="animal">
-                <h1 class="nome">Ignis</h1>
-                <p id="compatibilidade">Taxa de compatibilidade:</p>
-                <a href=""><button class="adotar">Adotar!</button></a>
+
+            <div class="animal-card">
+                <img src="/tcc/front/assets/ignis.png" alt="Ignis" class="animal">
+                <p class="compatibilidade">Compatibilidade: <span>90%</span></p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 90%;"></div>
+                </div>
+                <div class="acoes">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+                <div class="nomeLocalizacao">
+                <h3 class="nome">Ignis <i class="fa-solid fa-venus"></i></h3>
+                <p class="localizacao">Santa Isabel, SP</p>
+                </div>
+                <button class="adotar">Quero adotar!</button>
             </div>
         </div>
     </main>

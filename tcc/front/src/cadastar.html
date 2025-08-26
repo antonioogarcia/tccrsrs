@@ -15,21 +15,26 @@
      <header>
         <a href="/tcc/front/src/index.html"><i class="fa-solid fa-house"></i></a>
         <img src="/tcc/front/assets/logo.png" alt="" class="logo">
-    </header>
- <div class="container">
-    <h1>Crie sua conta!</h1>
-    <form action="signUp.php" method="post">
-    <div class="nomeSobrenome">
-        <input class="nome" type="text" name="" id="" placeholder="Nome">
-        <input class="sobrenome" type="text" name="" id="" placeholder="Sobrenome">
+    </header> 
+    <div class="divCadastrar">
+    <div class="esquerda">
+            <h1>Bem vindo(a),</h1>
+            <h1 class="c">Inicie seu cadastro!</h1>
+            <br><br>
+            <div class="container">
+            <form action="signUp.php" method="post">
+            <div class="nomeEmail">
+                <input class="nome" type="text" name="" id="" placeholder="Nome Completo">
+                <input class="email" type="email" name="" id="" placeholder="Email">
+            </div>
+            <p class="entrar ">Já tem conta? <a href="/tcc/front/src/entrar.html">Entre aqui!</a></p>
+            <a href="principal.html"><button type="submit" class="cadastrar">Cadastrar-se</button></a>
+            </form>
+            </div>
     </div>
-    <div class="emailSenha">
-        <input class="email" type="email" name="" id="" placeholder="Email">
-        <input class="senha" type="password" name="" id="" placeholder="Senha"><br>
+    <div class="direita">
+            <img src="/tcc/front/assets/cachorrosol.png" alt="">
     </div>
-    <p class="entrar ">Já tem conta? <a href="/tcc/front/src/style/index.css">Entre aqui!</a></p>
-    <a href="principal.html"><button type="submit" class="cadastrar">Cadastrar-se</button></a>
-    </form>
- </div>
+</div>
 </body>
 </html>

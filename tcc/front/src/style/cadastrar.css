@@ -3,15 +3,17 @@
     padding: 0;
 }
 body {
-    color: #f1f1f1;
+    background-color: #f3f3f3;
     color: #1f1f1f;
     font-family: "Inter", sans-serif;
     padding: 0;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-family: "Montserrat", serif;
     height: 10vh;
     color: black;
@@ -19,7 +21,7 @@ header {
     box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.267);
     font-weight: 500;
     align-items: center;
-    padding: 0 40px;
+    padding: 0 50%;
 }
 a {
     text-decoration: none;
@@ -36,9 +38,7 @@ header p:hover {
 }
 .logo {
     height: 20vh;
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
+        margin-top: 10px;
 }
 .entrar {
     font-size: 0.9rem;
@@ -47,6 +47,7 @@ header p:hover {
 }
 a {
     text-decoration: underline;
+    color: #196f5a;
 }
 .cadastrar {
     background-color: #197f5a;
@@ -68,15 +69,21 @@ a {
 .container {
     display: grid;
     justify-content: center;
-    align-items: center;
-    margin-top: 5%;
-    outline: solid 4px #197f5a;
-    width: 40vw;
+    outline: solid 3px #197f5a;
+    width: 30vw;
     height: 60vh;
-    position: relative;
-    left: 30%;
     border-radius: 8px;
     color: black;
+    
+}
+h1 {
+    color: #197f5a;
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+.c {
+    color: #1f1f1f;
+    font-weight: 500;
 }
 input {
     padding: 3px;
@@ -85,6 +92,7 @@ input {
     border-top: none;
     border-left: none;
     border-right: none;
+    width: 25vw;
 }
 input:focus {
     outline: none;
@@ -92,13 +100,33 @@ input:focus {
 input::placeholder {
     color: #197f5a;
 }
-.emailSenha {
-    display: grid;
-}
-.emailSenha input {
-    margin: 10px 0;
-}
 .fa-house {
     color: black;
     font-size: 1.5rem;
+}
+.nomeEmail {
+    display: grid;
+    gap: 20px;
+}
+.esquerda {
+    background-color: #ffffff;
+    width: 40%;
+
+    height: 150%;
+    display: grid;
+    justify-content: start;
+    padding-top: 2%;
+    padding-left: 60px;
+    
+}
+.divCadastrar {
+    display: flex;
+}
+img {
+    position: relative;
+    left: 120px;
+    height: 75vh;
+}
+.direita {
+    padding-top: 5%;
 }

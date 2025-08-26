@@ -89,22 +89,25 @@ h1 {
 }
 .titulo {
     text-align: center;
-    font-size: 4vh;
+    font-size: 5vh;
 }
 .imgTexto {
     padding-top: 15%;
-    width: 20vw;
-    height: 45vh;
+    width: 22vw;
+    height: 48vh;
     border: solid #197f5a 2px;
     border-radius: 8px;
     transition: 0.3s ease-in;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.267);
 }
 .imgTexto:hover {
-    width: 20.2vw;
-    height: 45.2vh;
+    width: 23vw;
+    height: 49vh;
 }
 .fa-house {
     color: black;
     font-size: 1.5rem;
+}
+.textoVerde {
+    color: #197f5a;
 }

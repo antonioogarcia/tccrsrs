@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Esmeralda</title>
+    <link rel="shortcut icon" href="/tcc/front/assets/logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="/tcc/front/src/style/cadastrarInfos.css">
+    <script src="https://kit.fontawesome.com/98b6f9f041.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="/tcc/front/src/index.html"><i class="fa-solid fa-house"></i></a>
+        <img src="/tcc/front/assets/logo.png" alt="Logo Esmeralda" class="logo">
+    </header> 
+
+    <div class="verde"></div>
+
+    <h1>Para <span class="verde-texto">continuarmos</span> com seu cadastro, complete o formulário.</h1>
+
+    <div class="container">
+        <div class="endereco">
+            <h2>Informações de endereço</h2>
+            <div class="doisElementos">
+                <input type="text" id="cep" placeholder="CEP">
+                <input type="text" id="bairro" placeholder="Bairro">
+            </div>
+            <input type="text" id="logradouro" class="inteiro" placeholder="Logradouro (rua, avenida, etc...)">
+            <div class="tresElementos">
+                <div class="numero">
+                    <input type="text" id="numero" placeholder="Número">
+                </div>
+                <input type="text" id="complemento" placeholder="Complemento">
+            </div>
+            <div class="doisElementos">
+                <input type="text" id="cidade" placeholder="Cidade">
+                <input type="text" id="estado" placeholder="Estado">
+            </div>
+        </div>
+        <br>
+        <div class="pessoal">
+            <h2>Dados Pessoais</h2>
+            <input type="text" id="nome" class="inteiro" placeholder="Nome">
+            <input type="text" id="telefone" class="inteiro" placeholder="Telefone">
+
+            <div class="doisElementos">
+                <input type="password" id="senha" placeholder="Senha">
+                <input type="password" id="confirmarSenha" placeholder="Confirmar senha">
+            </div>
+        </div>
+
+        <a href="/tcc/front/src/adotarDoar.html"><button type="submit" class="btn">Avançar</button></a>
+    </div>
+    <br><br>
+    <script src="/tcc/front/src/script/endereco.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f3f3f3;
+    color: #1f1f1f;
+    font-family: "Inter", sans-serif;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    background-color: white;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2);
+    padding: 0 5%;
+}
+
+header a {
+    color: black;
+    font-size: 20px;
+}
+
+.logo {
+    height: 12vh;
+}
+
+.verde {
+    background-color: #197f5a;
+    width: 100%;
+    height: 8vh;
+    box-shadow: inset 1px 1px 9px #1f1f1fb4;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.verde-texto {
+    color: #197f5a;
+}
+
+.container {
+    background: #fafafa;
+    width: 70%;
+    max-width: 800px;
+    margin: 0 auto;
+    border: 3px solid #197f5a;
+    border-radius: 12px;
+    padding: 20px;
+    gap: 200px;
+}
+
+h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #1f1f1f;
+}
+
+input {
+    border: 1.5px solid #197f5a;
+    border-radius: 6px;
+    padding: 8px;
+    outline: none;
+    font-size: 14px;
+    margin: 5px 0;
+    width: 100%;
+    background-color: transparent;
+    box-shadow: 1px 1px 3px #1f1f1fbb;
+}
+
+.inteiro {
+    width: 100%;
+}
+
+.doisElementos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.tresElementos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+}
+
+.numero {
+    display: flex;
+    flex-direction: column;
+}
+
+.numero label {
+    font-size: 13px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #197f5a;
+}
+
+.btn {
+    display: block;
+    margin: 20px auto 0 auto;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #197f5a;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #145c44;
+}
+::placeholder {
+    color: #197f5a;
+}
+a {
+    text-decoration: none;
+}
