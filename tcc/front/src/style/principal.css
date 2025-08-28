@@ -80,13 +80,12 @@ h2 {
     gap: 5px;
     font-size: 14px;
     cursor: pointer;
+    font-size: 1rem;
 }
 
 .filtro i {
     color: #197f5a;
 }
-
-/* CARDS DOS ANIMAIS */
 .containerAnimais {
     display: flex;
     justify-content: space-between;
@@ -180,4 +179,31 @@ i {
     justify-content: start;
     text-align: start;
 
+}
+.chat {
+    position: fixed;
+    bottom: 20px;  
+    right: 20px;   
+    background-color: #197f5a;
+    color: white;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    cursor: pointer;
+    z-index: 1000; 
+    transition: transform 0.2s, background-color 0.3s;
+    text-decoration: none;
+}
+.chat i {
+    color: #e0e0e0;
+}
+
+.chat:hover {
+    background-color: #145c44;
+    transform: scale(1.1);
 }

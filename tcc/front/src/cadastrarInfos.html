@@ -17,27 +17,34 @@
         <img src="/tcc/front/assets/logo.png" alt="Logo Esmeralda" class="logo">
     </header> 
 
+    <div id="fader" class="hide">
+      <div id="loader" class="spinner-border text-info hide" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      </div>
+
     <div class="verde"></div>
 
     <h1>Para <span class="verde-texto">continuarmos</span> com seu cadastro, complete o formulário.</h1>
 
     <div class="container">
+        <form action="" id="formEndereco">
         <div class="endereco">
             <h2>Informações de endereço</h2>
             <div class="doisElementos">
-                <input type="text" id="cep" placeholder="CEP">
-                <input type="text" id="bairro" placeholder="Bairro">
+                <input type="text" id="cep" placeholder="CEP" required data-input>
+                <input type="text" id="bairro" placeholder="Bairro" required data-input>
             </div>
-            <input type="text" id="logradouro" class="inteiro" placeholder="Logradouro (rua, avenida, etc...)">
+            <input type="text" id="logradouro" class="inteiro" placeholder="Logradouro (rua, avenida, etc...)" required data-input>
             <div class="tresElementos">
                 <div class="numero">
-                    <input type="text" id="numero" placeholder="Número">
+                    <input type="text" id="numero" placeholder="Número" required data-input>
                 </div>
-                <input type="text" id="complemento" placeholder="Complemento">
+                <input type="text" id="complemento" placeholder="Complemento" required data-input>
             </div>
             <div class="doisElementos">
-                <input type="text" id="cidade" placeholder="Cidade">
-                <input type="text" id="estado" placeholder="Estado">
+                <input type="text" id="cidade" placeholder="Cidade" required data-input>
+                <input type="text" id="estado" placeholder="Estado" required data-input>
             </div>
         </div>
         <br>
@@ -51,10 +58,10 @@
                 <input type="password" id="confirmarSenha" placeholder="Confirmar senha">
             </div>
         </div>
-
+        </form>
         <a href="/tcc/front/src/adotarDoar.html"><button type="submit" class="btn">Avançar</button></a>
     </div>
     <br><br>
-    <script src="/tcc/front/src/script/endereco.js"></script>
+    <script src="/tcc/front/src/script/endereco.js" defer></script>
 </body>
 </html>
