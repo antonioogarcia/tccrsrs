@@ -1,132 +1,164 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body {
-    background-color: #f3f3f3;
-    color: #1f1f1f;
-    font-family: "Inter", sans-serif;
-    padding: 0;
-    overflow-x: hidden;
-    overflow-y: hidden;
-}
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: "Montserrat", serif;
-    height: 10vh;
-    color: black;
-    background-color: white;
-    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.267);
-    font-weight: 500;
-    align-items: center;
-    padding: 0 50%;
-}
-a {
-    text-decoration: none;
-}
-header p {
-    cursor: pointer;
-    color: black;
-    text-decoration: none;
-    transition: ease-in-out 0.4s;
-}
-header p:hover {
-    font-size: 2.6vh;
-    color: #197f5a;
-}
-.logo {
-    height: 20vh;
-        margin-top: 10px;
-}
-.entrar {
-    font-size: 0.9rem;
-    text-align: center;
-    margin-bottom: 20px;
-}
-a {
-    text-decoration: underline;
-    color: #196f5a;
-}
-.cadastrar {
-    background-color: #197f5a;
-    width: 12vw;
-    height: 6vh;
-    outline: solid 3px #197f5a;
-    font-family: "Montserrat", serif;
-    font-weight: 500;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    transition: ease-in-out 0.4s;
-    margin-left: 25%;
-    color: white;
-}
-.cadastrar:hover {
-    height: 7vh;
-}
-.container {
-    display: grid;
-    justify-content: center;
-    outline: solid 3px #197f5a;
-    width: 30vw;
-    height: 60vh;
-    border-radius: 8px;
-    color: black;
-    
-}
-h1 {
-    color: #197f5a;
-    font-size: 1.8rem;
-    font-weight: 800;
-}
-.c {
-    color: #1f1f1f;
-    font-weight: 500;
-}
-input {
-    padding: 3px;
-    font-family: "Montserrat", serif;
-    border-bottom:  solid 1px #197f5a;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    width: 25vw;
-}
-input:focus {
-    outline: none;
-}
-input::placeholder {
-    color: #197f5a;
-}
-.fa-house {
-    color: black;
-    font-size: 1.5rem;
-}
-.nomeEmail {
-    display: grid;
-    gap: 20px;
-}
-.esquerda {
-    background-color: #ffffff;
-    width: 40%;
 
-    height: 150%;
-    display: grid;
-    justify-content: start;
-    padding-top: 2%;
-    padding-left: 60px;
-    
+body {
+  background-color: #f3f3f3;
+  color: #1f1f1f;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
 }
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  background-color: white;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2);
+  padding: 0 3rem;
+}
+
+.fa-house {
+  color: black;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.fa-house:hover {
+  color: #197f5a;
+}
+
+.logo {
+  height: 12vh;
+}
+
+/* Layout dividido */
 .divCadastrar {
-    display: flex;
+  display: flex;
+  height: 90vh;
 }
-img {
-    position: relative;
-    left: 120px;
-    height: 75vh;
+
+/* Esquerda */
+.esquerda {
+  background-color: #fff;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 4rem;
 }
+
+h1 {
+  color: #197f5a;
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+h1.c {
+  color: #1f1f1f;
+  font-weight: 500;
+}
+
+.nomeEmail {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input {
+  padding: 8px;
+  border: none;
+  border-bottom: 2px solid #197f5a;
+  background: none;
+  width: 100%;
+  font-family: inherit;
+}
+
+input:focus {
+  outline: none;
+}
+
+input::placeholder {
+  color: #197f5a;
+  font-weight: 500;
+}
+
+/* Botão */
+.cadastrar {
+  background-color: #197f5a;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 1rem;
+}
+.centralizar {
+      display: flex;
+  justify-content: center;
+}
+
+.cadastrar:hover {
+  background-color: #145c45;
+}
+
+/* Texto entrar */
+.entrar {
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.entrar a {
+  text-decoration: underline;
+  color: #197f5a;
+  font-weight: 600;
+}
+
+/* Direita */
 .direita {
-    padding-top: 5%;
+  background-color: #f9f9f9;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.direita img {
+  height: 75%;
+}
+
+/* Container */
+.container {
+  position: relative;
+  margin-top: 2rem;
+  border: 2px solid #197f5a;
+  border-radius: 8px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 400px;
+  height: 55vh;
+  box-shadow: 0px -6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Gato encaixado no canto */
+.gato {
+  position: absolute;
+  top: -46px;
+  left: -33px;
+  height: 90px;
+  z-index: 2;
+}
+
+.linha {
+  background-color: #1f1f1f70;
+  height: 1px;
+  filter: blur(2px);
 }

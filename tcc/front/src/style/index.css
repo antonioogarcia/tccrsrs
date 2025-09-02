@@ -94,9 +94,9 @@ header p:hover {
     justify-content: center;
     margin: 0 auto;
     margin-top: 90px;
-    width: 60vw;
+    width: 80vw;
     background-color: transparent;
-    height: 53vh;
+    height: 63vh;
     gap: 10px;
 }
 .containerImgsCarrossel {
@@ -104,15 +104,15 @@ header p:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 65vw;
-    height: 53vh;
+    width: 85vw;
+    height: 63vh;
     overflow: hidden;
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.687);
 }
 .slider {
     position: absolute;
-    width: 65vw;
-    height: 53vh;
+    width: 85vw;
+    height: 63vh;
     opacity: 0;
     transition: opacity 0.3s ease-in;
 }
@@ -134,8 +134,14 @@ header p:hover {
     margin-top: 100px;
     gap: 20px;
     margin-left: 50px;
-    margin-right: 40%;
+    margin-right: 10%;
     padding-left: 4%;
+}
+.assunto2 h1 {
+    font-size: 2.5rem;
+}
+.assunto2 p {
+    margin-right: 40%;
 }
 .assunto3 {
     margin-top: 100px;
@@ -208,4 +214,62 @@ header p:hover {
     to{
         transform: translateX(-100%);
     }
+}
+
+footer {
+    background: #fff;
+    color: #333;
+    padding: 40px 60px;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    font-family: "Montserrat", sans-serif;
+}
+.footerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+}
+.footerCol {
+    flex: 1;
+}
+.footerCol h3 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #197f5a;
+}
+.footerCol p {
+    margin: 8px 0;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.footerCol a {
+    text-decoration: underline;
+    color: inherit;
+    transition: color 0.3s;
+}
+.footerCol a:hover {
+    color: #197f5a;
+}
+.logoFooter {
+    height: 20vh;
+    margin-bottom: 15px;
+}
+.socials {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+.socials a {
+    font-size: 1.6rem;
+    color: #197f5a;
+    transition: transform 0.3s, color 0.3s;
+}
+.socials a:hover {
+    color: #145c41;
+    transform: scale(1.1);
+}
+i {
+    color: #197f5a;
 }

@@ -1,40 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Truco cerveja chatgpt</title>
-    <link rel="shortcut icon" href="/tcc/front/assets/logo.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="/tcc/front/src/style/cadastrar.css">
-    <script src="https://kit.fontawesome.com/98b6f9f041.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro - Esmeralda</title>
+  <link rel="shortcut icon" href="/tcc/front/assets/logo.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="/tcc/front/src/style/cadastrar.css">
+  <script src="https://kit.fontawesome.com/98b6f9f041.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-     <header>
-        <a href="/tcc/front/src/index.html"><i class="fa-solid fa-house"></i></a>
-        <img src="/tcc/front/assets/logo.png" alt="" class="logo">
-    </header> 
-    <div class="divCadastrar">
+  <!-- Header -->
+  <header>
+    <a href="/tcc/front/src/index.html"><i class="fa-solid fa-house"></i></a>
+    <img src="/tcc/front/assets/logo.png" alt="Logo Esmeralda" class="logo">
+  </header>
+  <div class="linha"></div>
+  <div class="divCadastrar">
     <div class="esquerda">
-            <h1>Bem vindo(a),</h1>
-            <h1 class="c">Inicie seu cadastro!</h1>
-            <br><br>
-            <div class="container">
-            <form action="signUp.php" method="post">
+      <h1>Bem vindo(a),</h1>
+      <h1 class="c">Inicie seu cadastro!</h1>
+      <br><br>
+        <div class="container">
+        <img src="/tcc/front/assets/gatodeitado2.png" alt="Gato" class="gato">
+        <form action="signUp.php" method="post">
+            <br>
             <div class="nomeEmail">
-                <input class="nome" type="text" name="" id="" placeholder="Nome Completo">
-                <input class="email" type="email" name="" id="" placeholder="Email">
+            <input class="nome" type="text" name="nome" placeholder="Nome completo" required>
+            <br>
+            <input class="email" type="email" name="email" placeholder="Email" required>
             </div>
-            <p class="entrar ">Já tem conta? <a href="/tcc/front/src/entrar.html">Entre aqui!</a></p>
-            <a href="principal.html"><button type="submit" class="cadastrar">Cadastrar-se</button></a>
-            </form>
+            <br>
+            <p class="entrar">Já possui uma conta? <a href="/tcc/front/src/entrar.html">Entre aqui</a></p>
+            <br>
+            <div class="centralizar">
+            <button type="submit" class="cadastrar">Cadastrar</button>
             </div>
+        </form>
+        </div>
     </div>
     <div class="direita">
-            <img src="/tcc/front/assets/cachorrosol.png" alt="">
+      <img src="/tcc/front/assets/cachorrosol.png" alt="Pessoa com cachorro">
     </div>
-</div>
+  </div>
 </body>
 </html>
