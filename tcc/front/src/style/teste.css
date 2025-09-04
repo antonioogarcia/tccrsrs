@@ -1,74 +1,124 @@
+
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
 body {
-    color: #f1f1f1;
-    color: #1f1f1f;
-    font-family: "Inter", sans-serif;
-    padding: 0;
-    overflow-x: hidden;
+  font-family: "Inter", sans-serif;
+  background: #f9f9f9;
+  color: #1f1f1f;
+  line-height: 1.5;
 }
+
 header {
     display: flex;
     justify-content: space-between;
-    font-family: "Montserrat", serif;
-    height: 10vh;
-    color: black;
-    background-color: white;
-    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.267);
-    font-weight: 500;
     align-items: center;
+    height: 10vh;
+    background-color: white;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2);
     padding: 0 40px;
-}
-a {
-    text-decoration: none;
-    color: unset;
-}
-header p {
-    cursor: pointer;
-    color: black;
-    text-decoration: none;
-    transition: ease-in-out 0.4s;
-}
-header p:hover {
-    font-size: 2.6vh;
-    color: #197f5a;
 }
 
 .logo {
-    height: 20vh;
-    margin-top: 10px;
-    margin: 0 auto;
+    height: 8vh;
 }
-h1 {
-    font-size: 1rem;
-}
-.fa-house {
-    color: black;
-    font-size: 1.5rem;
-}
+
 .containerTeste {
-    display: grid;
-    margin: 0 5%;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
-h1 {
-    font-size: 1.5rem;
+
+.containerTeste h2 {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 20px;
 }
-input, label, input[type="radio"], input[type="checkbox"] {
-    color: #197f5a;
+
+.verde {
+  color: #197f5a;
+  font-weight: bold;
 }
-input[type="text"] {
-    color: #197f5a;
-    outline: none;
+
+/* ===============================
+   PROGRESS BAR
+================================ */
+.progress-container {
+  width: 100%;
+  height: 12px;
+  background: #e0e0e0;
+  border-radius: 6px;
+  margin: 20px 0;
 }
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #197f5a;
+  border-radius: 6px;
+  transition: width 0.3s ease-in-out;
+}
+
+/* ===============================
+   QUESTÕES E OPÇÕES
+================================ */
+.step {
+  display: none;
+}
+
+.step.active {
+  display: block;
+}
+
+.step h1 {
+  font-size: 1rem;
+  margin: 20px 0 10px;
+}
+
+label {
+  display: block;
+  margin: 6px 0;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+input[type="radio"] {
+  margin-right: 8px;
+}
+
+/* ===============================
+   BOTÕES
+================================ */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
 button {
-    background-color: #197f5a;
-    color: #f1f1f1;
-    outline: none;
-    font-size: 1rem;
-    width: 16vw;
-    height: 6vh;
-    border: none;
-    border-radius: 6px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#prevBtn {
+  background: #ccc;
+  color: #1f1f1f;
+}
+
+#nextBtn {
+  background: #197f5a;
+  color: #fff;
+}
+
+button:hover {
+  opacity: 0.9;
 }
