@@ -122,3 +122,32 @@ button {
 button:hover {
   opacity: 0.9;
 }
+#previewContainer {
+  margin: 10px 0;
+  text-align: center;
+}
+
+#previewImg {
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+input[type="text"], textarea {
+  color: #197f5a;
+  width: 100%;
+  border: #197f5a 1px solid;
+  padding: 0 5px;
+  resize: none;
+  font-family: "Inter", sans-serif;
+  background-color: transparent;
+}
+input[type="text"] {
+  height: 4vh;
+}
+input[type="file"]::file-selector-button {
+  background-color: transparent;
+  border: #197f5a 2px solid; 
+  padding: 3px;
+  color: #197f5a;
+}
