@@ -22,13 +22,13 @@ header {
   padding: 0 3rem;
 }
 
-.fa-house {
+.fa-arrow-left {
   color: black;
   font-size: 1.5rem;
   transition: color 0.3s;
 }
 
-.fa-house:hover {
+.fa-arrow-left:hover {
   color: #197f5a;
 }
 
@@ -93,11 +93,13 @@ input::placeholder {
   border: none;
   border-radius: 6px;
   color: white;
-  font-weight: 600;
+  font-weight: 550;
   padding: 10px;
   cursor: pointer;
   transition: 0.3s;
   margin-top: 1rem;
+  width: 12vw;
+
 }
 .centralizar {
       display: flex;

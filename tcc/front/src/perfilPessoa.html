@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil - Esmeralda</title>
+  <link rel="shortcut icon" href="/tcc/front/assets/logo.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="/tcc/front/src/style/perfilPessoa.css">
+  <script src="https://kit.fontawesome.com/98b6f9f041.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <a href="javascript:history.back()"><i class="fa-solid fa-arrow-left"></i></a>
+    <img src="/tcc/front/assets/logo.png" alt="Logo Esmeralda" class="logo">
+  </header>
+
+  <main class="perfil">
+    <div class="perfil-header">
+      <div class="perfil-foto">
+        <i class="fa-regular fa-user"></i>
+      </div>
+      <h2>João Gomes</h2>
+      <p class="tipo-usuario">doador</p>
+    </div>
+
+    <form id="formPerfil" class="perfil-form">
+      <div class="form-group">
+        <label for="logradouro">Endereço</label>
+        <div class="input-wrapper">
+          <input type="text" id="logradouro" readonly>
+          <i class="fa-solid fa-pen edit-icon" data-target="logradouro"></i>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="numero">Número</label>
+          <div class="input-wrapper">
+            <input type="text" id="numero" readonly>
+            <i class="fa-solid fa-pen edit-icon" data-target="numero"></i>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="complemento">Complemento</label>
+          <div class="input-wrapper">
+            <input type="text" id="complemento"  readonly>
+            <i class="fa-solid fa-pen edit-icon" data-target="complemento"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="cep">CEP</label>
+          <div class="input-wrapper">
+            <input type="text" id="cep"  readonly>
+            <i class="fa-solid fa-pen edit-icon" data-target="cep"></i>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="bairro">Bairro</label>
+          <div class="input-wrapper">
+            <input type="text" id="bairro"  readonly>
+            <i class="fa-solid fa-pen edit-icon" data-target="bairro"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="cidade">Cidade</label>
+          <div class="input-wrapper">
+            <input type="text" id="cidade"  readonly>
+            <i class="fa-solid fa-pen edit-icon" data-target="cidade"></i>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="estado">Estado</label>
+          <div class="input-wrapper">
+            <input type="text" id="estado"  readonly>
+            <i class="fa-solid fa-pen edit-icon" data-target="estado"></i>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="botaoVerde">Salvar Alterações</button>
+    </form>
+  </main>
+
+  <script src="/tcc/front/src/script/perfil.js"></script>
+</body>
+</html>

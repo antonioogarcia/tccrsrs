@@ -23,17 +23,37 @@
         <h1>Olá, <span class="usuario">usuário!</span></h1>
         <h2>Estes são os <span class="textoVerde">animaizinhos</span> que mais combinam com você:</h2>
         
-        <div class="recomendacaofiltro">
-            <div class="recomendacao">
-                <img src="/tcc/front/assets/gatobo.png" class="gatobo">
-                <p>: Talvez seja melhor um animal de pequeno porte para seu apartamento</p>
-            </div>
-            <div class="filtro">
-                <i class="fa-solid fa-filter"></i>
-                <span>Filtrar por:</span>
-            </div>
+            <div class="recomendacaofiltro">
+        <div class="recomendacao">
+            <img src="/tcc/front/assets/gatobo.png" class="gatobo" />
+            <p>: Talvez seja melhor um animal de pequeno porte para seu apartamento</p>
         </div>
+        <div class="filtro" id="toggleFiltro">
+            <i class="fa-solid fa-filter"></i>
+            <span>Filtrar por:</span>
+        </div>
+        </div>
+
+        <div class="filtros" id="filtros">
+        <p>Raça</p>
+        <label><input type="radio" name="raca"> Gato</label>
+        <label><input type="radio" name="raca"> Cachorro</label>
+
+        <p>Porte</p>
+        <label><input type="radio" name="porte"> Grande</label>
+        <label><input type="radio" name="porte"> Médio</label>
+        <label><input type="radio" name="porte"> Pequeno</label>
+
+        <p>Distância</p>
+        <label><input type="radio" name="distancia"> Até 25KM</label>
+        <label><input type="radio" name="distancia"> Até 50KM</label>
+    
+        <p>Personalizados</p>
+        <label><input type="radio" name="distancia"> Favoritados</label>
+        </div>
+
         <div class="linhaVerde"></div>
+
         <br>
         <div class="containerAnimais">
             <div class="animal-card">
@@ -91,5 +111,13 @@
         <i class="fa-solid fa-comments"></i>
         </a>
     </main>
+    <script>
+            const toggleFiltro = document.getElementById("toggleFiltro");
+    const filtros = document.getElementById("filtros");
+
+    toggleFiltro.addEventListener("click", () => {
+    filtros.classList.toggle("ativo");
+    });
+    </script>
 </body>
 </html>

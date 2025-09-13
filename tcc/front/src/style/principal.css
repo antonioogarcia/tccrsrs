@@ -74,18 +74,45 @@ h2 {
     height: 10vh;
 }
 
-.filtro {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 14px;
-    cursor: pointer;
-    font-size: 1rem;
+.filtros {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.9s ease;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
-.filtro i {
-    color: #197f5a;
+.filtros p {
+  flex-basis: 100%;
+  font-weight: bold;
+  margin: 10px 0 5px;
 }
+
+.filtros label {
+  border: 1.5px solid #197f5a;
+  border-radius: 6px;
+  padding: 5px 12px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.95rem;
+  transition: 2s ease;
+}
+
+.filtros input[type="radio"] {
+  accent-color: #197f5a;
+}
+
+.filtros.ativo {
+  max-height: 500px; /* altura suficiente */
+  opacity: 1;
+  padding: 10px 0;
+}
+
 .containerAnimais {
     display: flex;
     justify-content: space-between;
@@ -207,3 +234,4 @@ i {
     background-color: #145c44;
     transform: scale(1.1);
 }
+

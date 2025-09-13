@@ -35,6 +35,9 @@ header p:hover {
     font-size: 2.6vh;
     color: #197f5a;
 }
+p {
+    font-weight: 500;
+}
 .logo {
     height: 20vh;
     margin-top: 10px;
@@ -94,7 +97,7 @@ header p:hover {
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    margin-top: 90px;
+    margin-top: 30px;
     width: 80vw;
     background-color: transparent;
     height: 63vh;
@@ -142,7 +145,7 @@ header p:hover {
     font-size: 2.5rem;
 }
 .assunto2 p {
-    margin-right: 40%;
+    margin-right: 20%;
 }
 .assunto3 {
     margin-top: 30px;
@@ -170,7 +173,7 @@ header p:hover {
     margin-bottom: 15px;
 }
 .imgsP {
-    margin: 0px 30px;
+    margin: 0px 10px;
 }
 .titulo {
     text-align: center;
@@ -186,7 +189,7 @@ header p:hover {
   align-items: center;
   justify-content: space-between;
   gap: 60px;
-  padding: 10px 10%;
+  padding: 0px 10%;
 }
 
 .textoHistoria {
@@ -250,7 +253,7 @@ header p:hover {
 /* --- animação do slide --- */
 .logos-slide {
   display: inline-block;
-  animation: 60s slide infinite linear;
+  animation: 45s slide infinite linear;
 }
 
 .logos-slide img {

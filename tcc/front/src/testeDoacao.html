@@ -9,6 +9,9 @@
     <script src="https://kit.fontawesome.com/98b6f9f041.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -28,8 +31,8 @@
       <div class="step active">
         <h1>1. Informações iniciais</h1>
         <br>
-        <p>Foto do animal (.JPG ou .PNG)</p>
-        <input type="file" id="fotoAnimal" name="foto" accept=".jpg,.png" required>
+        <p>Escolha a <span class="textoVerde">melhor</span> foto do animal (.JPG ou .PNG)</p>
+        <input type="file" id="fotoAnimal" name="foto" accept=".jpg,.png" multiple required>
         <div id="previewContainer">
           <img id="previewImg" src="" alt="Pré-visualização da foto" style="display:none;">
         </div>
@@ -123,11 +126,20 @@
         <button type="button" id="nextBtn">Confirmar respostas</button>
       </div>
     </form>
+  <div id="cropModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); justify-content:center; align-items:center; z-index:1000;">
+      <div style="background:white; padding:20px; border-radius:10px; max-width:600px; width:90%;">
+        <h3>Corte a imagem</h3>
+        <div>
+          <img id="imageToCrop" style="max-width:100%;">
+        </div>
+        <br>
+        <button id="cropBtn">Cortar</button>
+        <button id="cancelCrop">Cancelar</button>
+      </div>
+    </div>
   </div>
 </main>
 
-    </div>
-  </main>
    <script src="/tcc/front/src/script/teste.js"></script>
 </body>
 </html>

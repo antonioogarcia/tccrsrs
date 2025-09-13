@@ -10,6 +10,7 @@ body {
   background: #f9f9f9;
   color: #1f1f1f;
   line-height: 1.5;
+  font-weight: 600;
 }
 
 header {
@@ -136,7 +137,7 @@ button:hover {
 input[type="text"], textarea {
   color: #197f5a;
   width: 100%;
-  border: #197f5a 1px solid;
+  border: #197f5a 2px solid;
   padding: 0 5px;
   resize: none;
   font-family: "Inter", sans-serif;
@@ -149,5 +150,11 @@ input[type="file"]::file-selector-button {
   background-color: transparent;
   border: #197f5a 2px solid; 
   padding: 3px;
+  color: #197f5a;
+}
+input, textarea {
+  border-radius: 4px;
+}
+.textoVerde {
   color: #197f5a;
 }

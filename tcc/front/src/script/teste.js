@@ -14,17 +14,6 @@ function showStep(n) {
   progressBar.style.width = ((n + 1) / steps.length) * 100 + "%";
 }
 
-// nextBtn.addEventListener("click", () => {
-//   if (currentStep < steps.length - 1) {
-//     currentStep++;
-//     showStep(currentStep);
-//   } else {
-//     alert("Formulário enviado!");
-//     const form = document.querySelector("form"); 
-//     if (form) form.submit();
-//   }
-// });
-
 nextBtn.addEventListener("click", () => {
   const currentFields = steps[currentStep].querySelectorAll("input, textarea, select");
   let valid = true;
@@ -32,7 +21,6 @@ nextBtn.addEventListener("click", () => {
   currentFields.forEach(field => {
     if (field.hasAttribute("required")) {
       if (field.type === "radio") {
-        // valida radio pelo name
         const radios = steps[currentStep].querySelectorAll(`input[name="${field.name}"]`);
         const isChecked = [...radios].some(r => r.checked);
         if (!isChecked) valid = false;
@@ -57,7 +45,6 @@ nextBtn.addEventListener("click", () => {
   }
 });
 
-
 prevBtn.addEventListener("click", () => {
   if (currentStep > 0) {
     currentStep--;
@@ -67,22 +54,68 @@ prevBtn.addEventListener("click", () => {
 
 showStep(currentStep);
 
-// =====================
-// Preview da imagem
-// =====================
 const fotoInput = document.getElementById("fotoAnimal");
-const previewImg = document.getElementById("previewImg");
+const previewContainer = document.getElementById("previewContainer");
 
-if (fotoInput && previewImg) {
-  fotoInput.addEventListener("change", (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (ev) => {
-        previewImg.src = ev.target.result;
-        previewImg.style.display = "block";
-      };
-      reader.readAsDataURL(file);
-    }
-  });
-}
+const cropModal = document.getElementById("cropModal");
+const imageToCrop = document.getElementById("imageToCrop");
+const cropBtn = document.getElementById("cropBtn");
+const cancelCrop = document.getElementById("cancelCrop");
+
+let cropper;
+
+fotoInput.addEventListener("change", (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = (ev) => {
+    imageToCrop.src = ev.target.result;
+
+    // Espera a imagem carregar antes de criar o cropper
+    imageToCrop.onload = () => {
+      cropModal.style.display = "flex";
+      if (cropper) cropper.destroy();
+      cropper = new Cropper(imageToCrop, {
+        aspectRatio: 4 / 3, // corte retangular
+        viewMode: 1,
+        autoCropArea: 1
+      });
+    };
+  };
+  reader.readAsDataURL(file);
+});
+
+// Botão cortar
+cropBtn.addEventListener("click", () => {
+  if (cropper) {
+    const canvas = cropper.getCroppedCanvas({
+      width: 400,
+      height: 300,
+    });
+
+    const croppedImg = document.createElement("img");
+    croppedImg.src = canvas.toDataURL("image/png");
+    croppedImg.style.maxWidth = "150px";
+    croppedImg.style.margin = "10px";
+    croppedImg.style.borderRadius = "8px";
+    croppedImg.style.boxShadow = "0 2px 6px rgba(0,0,0,0.2)";
+
+    previewContainer.innerHTML = ""; // limpa previews anteriores
+    previewContainer.appendChild(croppedImg);
+
+    cropModal.style.display = "none";
+    cropper.destroy();
+    cropper = null;
+  }
+});
+
+// Botão cancelar
+cancelCrop.addEventListener("click", () => {
+  cropModal.style.display = "none";
+  if (cropper) {
+    cropper.destroy();
+    cropper = null;
+  }
+});
+

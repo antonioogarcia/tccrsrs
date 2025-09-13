@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste de doação</title>
-    <link rel="shortcut icon" href="/tcc/front/assets/logo.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="/tcc/front/src/style/teste.css">
-    <script src="https://kit.fontawesome.com/98b6f9f041.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teste de doação</title>
+  <link rel="shortcut icon" href="/tcc/front/assets/logo.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="/tcc/front/src/style/teste.css">
+  <script src="https://kit.fontawesome.com/98b6f9f041.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
@@ -24,22 +24,22 @@
         <div class="progress-bar" id="progressBar"></div>
       </div>
 
-      <form id="questionarioForm" aria-required="">
+      <form id="questionarioForm">
         
         <!-- STEP 1 -->
         <div class="step active">
           <h1>1. Estilo de vida</h1>
-          <label><input type="radio" name="estilo_vida" value="tranquilo"> Caseiro e tranquilo</label>
+          <label><input type="radio" name="estilo_vida" value="tranquilo" required> Caseiro e tranquilo</label>
           <label><input type="radio" name="estilo_vida" value="agitado"> Caseiro, mas com uma vida agitada</label>
           <label><input type="radio" name="estilo_vida" value="equilibrado"> Equilibrado</label>
 
           <h1>2. Formato de trabalho</h1>
-          <label><input type="radio" name="trabalho" value="remoto"> Remoto</label>
+          <label><input type="radio" name="trabalho" value="remoto" required> Remoto</label>
           <label><input type="radio" name="trabalho" value="hibrido"> Híbrido</label>
           <label><input type="radio" name="trabalho" value="presencial"> Presencial</label>
 
           <h1>3. Tempo disponível por dia</h1>
-          <label><input type="radio" name="tempo_animal" value="menos1h"> Menos de 1h</label>
+          <label><input type="radio" name="tempo_animal" value="menos1h" required> Menos de 1h</label>
           <label><input type="radio" name="tempo_animal" value="1a2h"> 1 a 2h</label>
           <label><input type="radio" name="tempo_animal" value="5mais"> 5h ou mais</label>
         </div>
@@ -47,17 +47,17 @@
         <!-- STEP 2 -->
         <div class="step">
           <h1>4. Rede de apoio</h1>
-          <label><input type="radio" name="rede_apoio" value="varias"> Sim, várias pessoas</label>
+          <label><input type="radio" name="rede_apoio" value="varias" required> Sim, várias pessoas</label>
           <label><input type="radio" name="rede_apoio" value="algumas"> Algumas pessoas</label>
           <label><input type="radio" name="rede_apoio" value="nenhuma"> Nenhuma</label>
 
           <h1>5. Custos de saúde</h1>
-          <label><input type="radio" name="saude_financeira" value="reserva"> Tenho reserva</label>
+          <label><input type="radio" name="saude_financeira" value="reserva" required> Tenho reserva</label>
           <label><input type="radio" name="saude_financeira" value="talvez"> Talvez</label>
           <label><input type="radio" name="saude_financeira" value="nao"> Não consigo</label>
 
           <h1>6. Viagens</h1>
-          <label><input type="radio" name="controle_viagem" value="amigos"> Com amigos</label>
+          <label><input type="radio" name="controle_viagem" value="amigos" required> Com amigos</label>
           <label><input type="radio" name="controle_viagem" value="hotel"> Hotel</label>
           <label><input type="radio" name="controle_viagem" value="levaria"> Levaria comigo</label>
         </div>
@@ -65,33 +65,33 @@
         <!-- STEP 3 -->
         <div class="step">
           <h1>7. Tipo de moradia</h1>
-          <label><input type="radio" name="moradia" value="casa"> Casa</label>
+          <label><input type="radio" name="moradia" value="casa" required> Casa</label>
           <label><input type="radio" name="moradia" value="apartamento"> Apartamento</label>
 
           <h1>8. Espaço disponível</h1>
-          <label><input type="radio" name="espaco" value="grande"> Grande quintal</label>
+          <label><input type="radio" name="espaco" value="grande" required> Grande quintal</label>
           <label><input type="radio" name="espaco" value="medio"> Médio</label>
           <label><input type="radio" name="espaco" value="pequeno"> Pequeno</label>
 
           <h1>9. Já teve animais?</h1>
-          <label><input type="radio" name="experiencia" value="sim"> Sim</label>
+          <label><input type="radio" name="experiencia" value="sim" required> Sim</label>
           <label><input type="radio" name="experiencia" value="nao"> Não</label>
         </div>
 
         <!-- STEP 4 -->
         <div class="step">
           <h1>10. Preferência de espécie</h1>
-          <label><input type="radio" name="especie" value="cachorro"> Cachorro</label>
+          <label><input type="radio" name="especie" value="cachorro" required> Cachorro</label>
           <label><input type="radio" name="especie" value="gato"> Gato</label>
           <label><input type="radio" name="especie" value="indiferente"> Indiferente</label>
 
           <h1>11. Preferência de porte</h1>
-          <label><input type="radio" name="porte" value="pequeno"> Pequeno</label>
+          <label><input type="radio" name="porte" value="pequeno" required> Pequeno</label>
           <label><input type="radio" name="porte" value="medio"> Médio</label>
           <label><input type="radio" name="porte" value="grande"> Grande</label>
 
           <h1>12. Preferência de idade</h1>
-          <label><input type="radio" name="idade" value="filhote"> Filhote</label>
+          <label><input type="radio" name="idade" value="filhote" required> Filhote</label>
           <label><input type="radio" name="idade" value="adulto"> Adulto</label>
           <label><input type="radio" name="idade" value="idoso"> Idoso</label>
         </div>
@@ -99,17 +99,17 @@
         <!-- STEP 5 -->
         <div class="step">
           <h1>13. Tempo fora de casa</h1>
-          <label><input type="radio" name="tempo_fora" value="pouco"> Pouco</label>
+          <label><input type="radio" name="tempo_fora" value="pouco" required> Pouco</label>
           <label><input type="radio" name="tempo_fora" value="medio"> Médio</label>
           <label><input type="radio" name="tempo_fora" value="muito"> Muito</label>
 
           <h1>14. Tolerância a bagunça</h1>
-          <label><input type="radio" name="bagunca" value="alta"> Alta</label>
+          <label><input type="radio" name="bagunca" value="alta" required> Alta</label>
           <label><input type="radio" name="bagunca" value="media"> Média</label>
           <label><input type="radio" name="bagunca" value="baixa"> Baixa</label>
 
           <h1>15. Tolerância a barulho</h1>
-          <label><input type="radio" name="barulho" value="alta"> Alta</label>
+          <label><input type="radio" name="barulho" value="alta" required> Alta</label>
           <label><input type="radio" name="barulho" value="media"> Média</label>
           <label><input type="radio" name="barulho" value="baixa"> Baixa</label>
         </div>
@@ -117,15 +117,15 @@
         <!-- STEP 6 -->
         <div class="step">
           <h1>16. Crianças em casa</h1>
-          <label><input type="radio" name="criancas" value="sim"> Sim</label>
+          <label><input type="radio" name="criancas" value="sim" required> Sim</label>
           <label><input type="radio" name="criancas" value="nao"> Não</label>
 
           <h1>17. Outros animais em casa</h1>
-          <label><input type="radio" name="outros_animais" value="sim"> Sim</label>
+          <label><input type="radio" name="outros_animais" value="sim" required> Sim</label>
           <label><input type="radio" name="outros_animais" value="nao"> Não</label>
 
           <h1>18. Gasto mensal disponível</h1>
-          <label><input type="radio" name="gasto" value="baixo"> Baixo</label>
+          <label><input type="radio" name="gasto" value="baixo" required> Baixo</label>
           <label><input type="radio" name="gasto" value="medio"> Médio</label>
           <label><input type="radio" name="gasto" value="alto"> Alto</label>
         </div>
@@ -133,32 +133,32 @@
         <!-- STEP 7 -->
         <div class="step">
           <h1>19. Preferência de energia</h1>
-          <label><input type="radio" name="energia" value="alta"> Alta</label>
+          <label><input type="radio" name="energia" value="alta" required> Alta</label>
           <label><input type="radio" name="energia" value="media"> Média</label>
           <label><input type="radio" name="energia" value="baixa"> Baixa</label>
 
           <h1>20. Tempo para passeios</h1>
-          <label><input type="radio" name="passeios" value="pouco"> Pouco</label>
+          <label><input type="radio" name="passeios" value="pouco" required> Pouco</label>
           <label><input type="radio" name="passeios" value="medio"> Médio</label>
           <label><input type="radio" name="passeios" value="muito"> Muito</label>
 
           <h1>21. Pode lidar com animais especiais?</h1>
-          <label><input type="radio" name="especiais" value="sim"> Sim</label>
+          <label><input type="radio" name="especiais" value="sim" required> Sim</label>
           <label><input type="radio" name="especiais" value="nao"> Não</label>
         </div>
 
         <!-- STEP 8 -->
         <div class="step">
           <h1>22. Já adotou antes?</h1>
-          <label><input type="radio" name="adotou" value="sim"> Sim</label>
+          <label><input type="radio" name="adotou" value="sim" required> Sim</label>
           <label><input type="radio" name="adotou" value="nao"> Não</label>
 
           <h1>23. Pretende castrar?</h1>
-          <label><input type="radio" name="castrar" value="sim"> Sim</label>
+          <label><input type="radio" name="castrar" value="sim" required> Sim</label>
           <label><input type="radio" name="castrar" value="nao"> Não</label>
 
           <h1>24. Motivo da adoção</h1>
-          <label><input type="radio" name="motivo" value="companhia"> Companhia</label>
+          <label><input type="radio" name="motivo" value="companhia" required> Companhia</label>
           <label><input type="radio" name="motivo" value="crianca"> Presente para criança</label>
           <label><input type="radio" name="motivo" value="outros"> Outros</label>
         </div>
@@ -166,7 +166,7 @@
         <!-- STEP 9 -->
         <div class="step">
           <h1>25. Está disposto a compromisso de longo prazo?</h1>
-          <label><input type="radio" name="compromisso" value="sim"> Sim</label>
+          <label><input type="radio" name="compromisso" value="sim" required> Sim</label>
           <label><input type="radio" name="compromisso" value="nao"> Não</label>
         </div>
 
