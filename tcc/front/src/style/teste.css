@@ -158,3 +158,12 @@ input, textarea {
 .textoVerde {
   color: #197f5a;
 }
+.fa-arrow-left {
+  color: black;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.fa-arrow-left:hover {
+  color: #197f5a;
+}

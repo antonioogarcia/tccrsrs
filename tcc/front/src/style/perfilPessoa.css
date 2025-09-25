@@ -20,6 +20,15 @@ header {
   margin-top: 10px;
   margin-left: 30px;
 }
+.fa-arrow-left {
+  color: black;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.fa-arrow-left:hover {
+  color: #197f5a;
+}
 
 .perfil {
   width: 70vw;
@@ -113,4 +122,13 @@ input:focus {
 header i {
     color: black;
     font-size: 1.3rem;
+}
+.logOut {
+  color: red;
+  text-decoration: underline;
+  background-color: transparent;
+  border: none;
+  padding-top: 70px;
+  position: relative;
+  right: 15%;
 }

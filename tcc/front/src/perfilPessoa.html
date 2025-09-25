@@ -21,11 +21,24 @@
       <div class="perfil-foto">
         <i class="fa-regular fa-user"></i>
       </div>
-      <h2>João Gomes</h2>
-      <p class="tipo-usuario">doador</p>
+      <div class="nome-wrapper">
+        <h2 id="nome-display">João Gomes</h2>
+        <input type="text" id="nome" value="João Gomes" style="display:none;">
+        <i class="fa-solid fa-pen edit-icon" data-target="nome"></i>
+      </div>
+      <p class="tipo-usuario">Doador</p>
     </div>
 
     <form id="formPerfil" class="perfil-form">
+   <div class="form-group">
+  <label for="email">E-mail</label>
+  <div class="input-wrapper">
+    <input type="email" id="email" readonly>
+    <i class="fa-solid fa-pen edit-icon" data-target="email"></i>
+  </div>
+</div>
+
+
       <div class="form-group">
         <label for="logradouro">Endereço</label>
         <div class="input-wrapper">
@@ -46,7 +59,7 @@
         <div class="form-group">
           <label for="complemento">Complemento</label>
           <div class="input-wrapper">
-            <input type="text" id="complemento"  readonly>
+            <input type="text" id="complemento" readonly>
             <i class="fa-solid fa-pen edit-icon" data-target="complemento"></i>
           </div>
         </div>
@@ -56,7 +69,7 @@
         <div class="form-group">
           <label for="cep">CEP</label>
           <div class="input-wrapper">
-            <input type="text" id="cep"  readonly>
+            <input type="text" id="cep" readonly>
             <i class="fa-solid fa-pen edit-icon" data-target="cep"></i>
           </div>
         </div>
@@ -64,7 +77,7 @@
         <div class="form-group">
           <label for="bairro">Bairro</label>
           <div class="input-wrapper">
-            <input type="text" id="bairro"  readonly>
+            <input type="text" id="bairro" readonly>
             <i class="fa-solid fa-pen edit-icon" data-target="bairro"></i>
           </div>
         </div>
@@ -74,7 +87,7 @@
         <div class="form-group">
           <label for="cidade">Cidade</label>
           <div class="input-wrapper">
-            <input type="text" id="cidade"  readonly>
+            <input type="text" id="cidade" readonly>
             <i class="fa-solid fa-pen edit-icon" data-target="cidade"></i>
           </div>
         </div>
@@ -82,7 +95,7 @@
         <div class="form-group">
           <label for="estado">Estado</label>
           <div class="input-wrapper">
-            <input type="text" id="estado"  readonly>
+            <input type="text" id="estado" readonly>
             <i class="fa-solid fa-pen edit-icon" data-target="estado"></i>
           </div>
         </div>
@@ -90,6 +103,7 @@
 
       <button type="submit" class="botaoVerde">Salvar Alterações</button>
     </form>
+    <button class="logOut">Sair</button>
   </main>
 
   <script src="/tcc/front/src/script/perfil.js"></script>

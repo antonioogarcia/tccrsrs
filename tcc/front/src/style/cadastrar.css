@@ -153,8 +153,8 @@ input::placeholder {
 /* Gato encaixado no canto */
 .gato {
   position: absolute;
-  top: -46px;
-  left: -33px;
+  top: -67px;
+  left: -17px;
   height: 90px;
   z-index: 2;
 }

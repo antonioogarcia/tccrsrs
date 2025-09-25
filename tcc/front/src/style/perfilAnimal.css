@@ -135,7 +135,6 @@ header p:hover {
 .prosseguir {
   background-color: #197f5a;
   color: white;
-  font-family: "Montserrat", sans-serif;
   font-weight: 600;
   padding: 12px 20px;
   border-radius: 6px;
@@ -147,4 +146,25 @@ header p:hover {
 
 .prosseguir:hover {
   background-color: #145c45;
+}
+.linha {
+    background-color: #1f1f1f7e;
+    width: 100%;
+    height: 1px;
+}
+.infos {
+    text-align: start;
+    padding-left: 10px;
+    color: #1f1f1fd3;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+}
+.fa-arrow-left {
+  color: black;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.fa-arrow-left:hover {
+  color: #197f5a;
 }

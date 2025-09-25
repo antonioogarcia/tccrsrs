@@ -22,34 +22,26 @@
     <main>
         <h1>Olá, <span class="usuario">usuário!</span></h1>
         <h2>Estes são os <span class="textoVerde">animaizinhos</span> que mais combinam com você:</h2>
-        
-            <div class="recomendacaofiltro">
-        <div class="recomendacao">
-            <img src="/tcc/front/assets/gatobo.png" class="gatobo" />
-            <p>: Talvez seja melhor um animal de pequeno porte para seu apartamento</p>
-        </div>
-        <div class="filtro" id="toggleFiltro">
-            <i class="fa-solid fa-filter"></i>
-            <span>Filtrar por:</span>
-        </div>
+        <br>
+        <div class="recomendacaofiltro">
+            <div class="filtro" id="toggleFiltro">
+                <i class="fa-solid fa-filter"></i>
+                <span>Filtrar por:</span>
+            </div>
         </div>
 
         <div class="filtros" id="filtros">
-        <p>Raça</p>
-        <label><input type="radio" name="raca"> Gato</label>
-        <label><input type="radio" name="raca"> Cachorro</label>
+            <p>Porte</p>
+            <label><input type="radio" name="porte"> Grande</label>
+            <label><input type="radio" name="porte"> Médio</label>
+            <label><input type="radio" name="porte"> Pequeno</label>
 
-        <p>Porte</p>
-        <label><input type="radio" name="porte"> Grande</label>
-        <label><input type="radio" name="porte"> Médio</label>
-        <label><input type="radio" name="porte"> Pequeno</label>
-
-        <p>Distância</p>
-        <label><input type="radio" name="distancia"> Até 25KM</label>
-        <label><input type="radio" name="distancia"> Até 50KM</label>
-    
-        <p>Personalizados</p>
-        <label><input type="radio" name="distancia"> Favoritados</label>
+            <p>Distância</p>
+            <label><input type="radio" name="distancia"> Até 25KM</label>
+            <label><input type="radio" name="distancia"> Até 50KM</label>
+        
+            <p>Personalizados</p>
+            <label><input type="radio" name="favoritos"> Favoritados</label>
         </div>
 
         <div class="linhaVerde"></div>
@@ -64,28 +56,11 @@
                 </div>
                 <div class="acoes">
                     <i class="fa-solid fa-circle-exclamation"></i>
-                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-regular fa-heart favorito"></i>
                 </div>
                 <div class="nomeLocalizacao">
-                <h3 class="nome">Ignis <i class="fa-solid fa-venus"></i></h3>
-                <p class="localizacao">Santa Isabel, SP</p>
-                 </div>
-                <button class="adotar">Quero adotar!</button>
-            </div>
-
-            <div class="animal-card">
-                <img src="/tcc/front/assets/ignis.png" alt="Ignis" class="animal">
-                <p class="compatibilidade">Compatibilidade: <span>90%</span></p>
-                <div class="progress-bar">
-                    <div class="progress" style="width: 90%;"></div>
-                </div>
-                <div class="acoes">
-                    <i class="fa-solid fa-circle-exclamation"></i>
-                    <i class="fa-regular fa-heart"></i>
-                </div>
-                <div class="nomeLocalizacao">
-                <h3 class="nome">Ignis <i class="fa-solid fa-venus"></i></h3>
-                <p class="localizacao">Santa Isabel, SP</p>
+                    <h3 class="nome">Ignis <i class="fa-solid fa-venus"></i></h3>
+                    <p class="localizacao">Santa Isabel, SP</p>
                 </div>
                 <button class="adotar">Quero adotar!</button>
             </div>
@@ -98,26 +73,50 @@
                 </div>
                 <div class="acoes">
                     <i class="fa-solid fa-circle-exclamation"></i>
-                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-regular fa-heart favorito"></i>
                 </div>
                 <div class="nomeLocalizacao">
-                <h3 class="nome">Ignis <i class="fa-solid fa-venus"></i></h3>
-                <p class="localizacao">Santa Isabel, SP</p>
+                    <h3 class="nome">Ignis <i class="fa-solid fa-venus"></i></h3>
+                    <p class="localizacao">Santa Isabel, SP</p>
+                </div>
+                <button class="adotar">Quero adotar!</button>
+            </div>
+
+            <div class="animal-card">
+                <img src="/tcc/front/assets/ignis.png" alt="Ignis" class="animal">
+                <p class="compatibilidade">Compatibilidade: <span>90%</span></p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 90%;"></div>
+                </div>
+                <div class="acoes">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <i class="fa-regular fa-heart favorito"></i>
+                </div>
+                <div class="nomeLocalizacao">
+                    <h3 class="nome">Ignis <i class="fa-solid fa-venus"></i></h3>
+                    <p class="localizacao">Santa Isabel, SP</p>
                 </div>
                 <button class="adotar">Quero adotar!</button>
             </div>
         </div>
-        <a href="/tcc/front/pages/chats.html" class="chat">
-        <i class="fa-solid fa-comments"></i>
-        </a>
     </main>
-    <script>
-            const toggleFiltro = document.getElementById("toggleFiltro");
-    const filtros = document.getElementById("filtros");
 
-    toggleFiltro.addEventListener("click", () => {
-    filtros.classList.toggle("ativo");
-    });
+    <script>
+        // Abrir seção de filtros
+        const toggleFiltro = document.getElementById("toggleFiltro");
+        const filtros = document.getElementById("filtros");
+
+        toggleFiltro.addEventListener("click", () => {
+            filtros.classList.toggle("ativo");
+        });
+
+        // Alternar coração ao clicar
+        document.querySelectorAll(".favorito").forEach(coracao => {
+            coracao.addEventListener("click", () => {
+                coracao.classList.toggle("fa-regular");
+                coracao.classList.toggle("fa-solid");
+            });
+        });
     </script>
 </body>
 </html>

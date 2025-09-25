@@ -104,9 +104,14 @@ h1 {
     width: 23vw;
     height: 49vh;
 }
-.fa-house {
-    color: black;
-    font-size: 1.5rem;
+.fa-arrow-left {
+  color: black;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.fa-arrow-left:hover {
+  color: #197f5a;
 }
 .textoVerde {
     color: #197f5a;
