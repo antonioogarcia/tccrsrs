@@ -25,151 +25,494 @@
       </div>
 
       <form id="questionarioForm">
-        
-        <!-- STEP 1 -->
-        <div class="step active">
-          <h1>1. Estilo de vida</h1>
-          <label><input type="radio" name="estilo_vida" value="tranquilo" required> Caseiro e tranquilo</label>
-          <label><input type="radio" name="estilo_vida" value="agitado"> Caseiro, mas com uma vida agitada</label>
-          <label><input type="radio" name="estilo_vida" value="equilibrado"> Equilibrado</label>
+  <!-- STEP 4: Treinamento e obediência (q1-q2) -->
+<div class="step">
+  <h1>4. Treinamento e obediência</h1>
+  <h1 class="descricao">Defina seu grau de aceitação em relação ao comportamento de cães no processo de treinamento e obediência. Use a escala: 0 = não aceito; 4 = aceito totalmente.</h1>
 
-          <h1>2. Formato de trabalho</h1>
-          <label><input type="radio" name="trabalho" value="remoto" required> Remoto</label>
-          <label><input type="radio" name="trabalho" value="hibrido"> Híbrido</label>
-          <label><input type="radio" name="trabalho" value="presencial"> Presencial</label>
+  <div class="question">
+    <p>1. Obediência para instruções básicas (ex.: comando para sentar, ficar onde está, vir quando é chamado)</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q1Visor" min="0" max="4" value="" onchange="document.getElementById('q1Range').value=this.value" readonly>
+        <input type="range" id="q1Range" name="q1" min="0" max="4" value="" required onchange="document.getElementById('q1Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
 
-          <h1>3. Tempo disponível por dia</h1>
-          <label><input type="radio" name="tempo_animal" value="menos1h" required> Menos de 1h</label>
-          <label><input type="radio" name="tempo_animal" value="1a2h"> 1 a 2h</label>
-          <label><input type="radio" name="tempo_animal" value="5mais"> 5h ou mais</label>
-        </div>
+  <div class="question">
+    <p>2. É devagar para aprender novos truques e tarefas</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q2Visor" min="0" max="4" value="0" onchange="document.getElementById('q2Range').value=this.value" readonly>
+        <input type="range" id="q2Range" name="q2" min="0" max="4" value="0" required onchange="document.getElementById('q2Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
+</div>
 
-        <!-- STEP 2 -->
-        <div class="step">
-          <h1>4. Rede de apoio</h1>
-          <label><input type="radio" name="rede_apoio" value="varias" required> Sim, várias pessoas</label>
-          <label><input type="radio" name="rede_apoio" value="algumas"> Algumas pessoas</label>
-          <label><input type="radio" name="rede_apoio" value="nenhuma"> Nenhuma</label>
+<!-- STEP 5: Agressão (q3-q5) -->
+<div class="step">
+  <h1>5. Agressão</h1>
+  <h1 class="descricao">Defina seu grau de aceitação em relação a possíveis comportamentos de agressividade em cães. 0 = não aceito; 4 = aceito totalmente.</h1>
 
-          <h1>5. Custos de saúde</h1>
-          <label><input type="radio" name="saude_financeira" value="reserva" required> Tenho reserva</label>
-          <label><input type="radio" name="saude_financeira" value="talvez"> Talvez</label>
-          <label><input type="radio" name="saude_financeira" value="nao"> Não consigo</label>
+  <div class="question">
+    <p>3. Quando o cão é corrigido/punido verbalmente</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q3Visor" min="0" max="4" value="0" onchange="document.getElementById('q3Range').value=this.value" readonly>
+        <input type="range" id="q3Range" name="q3" min="0" max="4" value="0" required onchange="document.getElementById('q3Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
 
-          <h1>6. Viagens</h1>
-          <label><input type="radio" name="controle_viagem" value="amigos" required> Com amigos</label>
-          <label><input type="radio" name="controle_viagem" value="hotel"> Hotel</label>
-          <label><input type="radio" name="controle_viagem" value="levaria"> Levaria comigo</label>
-        </div>
+  <div class="question">
+    <p>4. Quando o cão é abordado diretamente por uma pessoa desconhecida enquanto passeia ou se exercita com guia/coleira (adulto ou criança)</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q4Visor" min="0" max="4" value="0" onchange="document.getElementById('q4Range').value=this.value" readonly>
+        <input type="range" id="q4Range" name="q4" min="0" max="4" value="0" required onchange="document.getElementById('q4Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
 
-        <!-- STEP 3 -->
-        <div class="step">
-          <h1>7. Tipo de moradia</h1>
-          <label><input type="radio" name="moradia" value="casa" required> Casa</label>
-          <label><input type="radio" name="moradia" value="apartamento"> Apartamento</label>
+  <div class="question">
+    <p>5. Quando brinquedos, ossos ou outros objetos são retirados do cão</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q5Visor" min="0" max="4" value="0" onchange="document.getElementById('q5Range').value=this.value" readonly>
+        <input type="range" id="q5Range" name="q5" min="0" max="4" value="0" required onchange="document.getElementById('q5Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
+</div>
 
-          <h1>8. Espaço disponível</h1>
-          <label><input type="radio" name="espaco" value="grande" required> Grande quintal</label>
-          <label><input type="radio" name="espaco" value="medio"> Médio</label>
-          <label><input type="radio" name="espaco" value="pequeno"> Pequeno</label>
+<!-- STEP 6: Agressão / comportamento reativo (q6-q8) -->
+<div class="step">
+  <h1>6. Agressão / Comportamento reativo</h1>
 
-          <h1>9. Já teve animais?</h1>
-          <label><input type="radio" name="experiencia" value="sim" required> Sim</label>
-          <label><input type="radio" name="experiencia" value="nao"> Não</label>
-        </div>
+  <div class="question">
+    <p>6. Quando o cão é banhado ou escovado</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q6Visor" min="0" max="4" value="0" onchange="document.getElementById('q6Range').value=this.value" readonly>
+        <input type="range" id="q6Range" name="q6" min="0" max="4" value="0" required onchange="document.getElementById('q6Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
 
-        <!-- STEP 4 -->
-        <div class="step">
-          <h1>10. Preferência de espécie</h1>
-          <label><input type="radio" name="especie" value="cachorro" required> Cachorro</label>
-          <label><input type="radio" name="especie" value="gato"> Gato</label>
-          <label><input type="radio" name="especie" value="indiferente"> Indiferente</label>
+  <div class="question">
+    <p>7. Quando alguém se aproxima do cão enquanto come e/ou retira sua comida</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q7Visor" min="0" max="4" value="0" onchange="document.getElementById('q7Range').value=this.value" readonly>
+        <input type="range" id="q7Range" name="q7" min="0" max="4" value="0" required onchange="document.getElementById('q7Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
 
-          <h1>11. Preferência de porte</h1>
-          <label><input type="radio" name="porte" value="pequeno" required> Pequeno</label>
-          <label><input type="radio" name="porte" value="medio"> Médio</label>
-          <label><input type="radio" name="porte" value="grande"> Grande</label>
+  <div class="question">
+    <p>8. Quando o cão é abordado por animais desconhecidos</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q8Visor" min="0" max="4" value="0" onchange="document.getElementById('q8Range').value=this.value" readonly>
+        <input type="range" id="q8Range" name="q8" min="0" max="4" value="0" required onchange="document.getElementById('q8Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
+</div>
 
-          <h1>12. Preferência de idade</h1>
-          <label><input type="radio" name="idade" value="filhote" required> Filhote</label>
-          <label><input type="radio" name="idade" value="adulto"> Adulto</label>
-          <label><input type="radio" name="idade" value="idoso"> Idoso</label>
-        </div>
+<!-- STEP 7: Medo e ansiedade (q9-q14) -->
+<div class="step">
+  <h1>7. Medo e ansiedade</h1>
+  <h1 class="descricao">Defina seu grau de aceitação em relação a cães que apresentam medo ou ansiedade em determinadas situações. 0 = não aceito; 4 = aceito totalmente.</h1>
 
-        <!-- STEP 5 -->
-        <div class="step">
-          <h1>13. Tempo fora de casa</h1>
-          <label><input type="radio" name="tempo_fora" value="pouco" required> Pouco</label>
-          <label><input type="radio" name="tempo_fora" value="medio"> Médio</label>
-          <label><input type="radio" name="tempo_fora" value="muito"> Muito</label>
+  <div class="question">
+    <p>9. Quando o cão é abordado por uma pessoa desconhecida (adulto ou criança)</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q9Visor" min="0" max="4" value="0" onchange="document.getElementById('q9Range').value=this.value" readonly>
+        <input type="range" id="q9Range" name="q9" min="0" max="4" value="0" required onchange="document.getElementById('q9Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
 
-          <h1>14. Tolerância a bagunça</h1>
-          <label><input type="radio" name="bagunca" value="alta" required> Alta</label>
-          <label><input type="radio" name="bagunca" value="media"> Média</label>
-          <label><input type="radio" name="bagunca" value="baixa"> Baixa</label>
+  <div class="question">
+    <p>10. Em resposta a barulhos altos ou subtos (ex. aspirador de pó, tempestade, queima de fogos, britadeiras)</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q10Visor" min="0" max="4" value="0" onchange="document.getElementById('q10Range').value=this.value" readonly>
+        <input type="range" id="q10Range" name="q10" min="0" max="4" value="0" required onchange="document.getElementById('q10Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
 
-          <h1>15. Tolerância a barulho</h1>
-          <label><input type="radio" name="barulho" value="alta" required> Alta</label>
-          <label><input type="radio" name="barulho" value="media"> Média</label>
-          <label><input type="radio" name="barulho" value="baixa"> Baixa</label>
-        </div>
+  <div class="question">
+    <p>11. Quando o cão é examinado por um veterinário</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q11Visor" min="0" max="4" value="0" onchange="document.getElementById('q11Range').value=this.value" readonly>
+        <input type="range" id="q11Range" name="q11" min="0" max="4" value="0" required onchange="document.getElementById('q11Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
+</div>
+<!-- STEP 7: Medo e ansiedade (q9-q11) -->
+<div class="step">
+  <h1>7. Medo e ansiedade</h1>
+  <h1 class="descricao">
+    Defina seu grau de aceitação em relação a cães que apresentam medo ou ansiedade em determinadas situações.
+    Use a escala de 0 a 4, sendo 0 = não aceito e 4 = aceito totalmente.
+  </h1>
 
-        <!-- STEP 6 -->
-        <div class="step">
-          <h1>16. Crianças em casa</h1>
-          <label><input type="radio" name="criancas" value="sim" required> Sim</label>
-          <label><input type="radio" name="criancas" value="nao"> Não</label>
+  <div class="question">
+    <p>9. Quando o cão é abordado por uma pessoa desconhecida (adulto ou criança)</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q9Visor" min="0" max="4" value="0" onchange="document.getElementById('q9Range').value=this.value" readonly>
+        <input type="range" id="q9Range" name="q9" min="0" max="4" value="0" required onchange="document.getElementById('q9Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
 
-          <h1>17. Outros animais em casa</h1>
-          <label><input type="radio" name="outros_animais" value="sim" required> Sim</label>
-          <label><input type="radio" name="outros_animais" value="nao"> Não</label>
+  <div class="question">
+    <p>10. Em resposta a barulhos altos ou subtos (ex. aspirador de pó, tempestade, queima de fogos, britadeiras)</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q10Visor" min="0" max="4" value="0" onchange="document.getElementById('q10Range').value=this.value" readonly>
+        <input type="range" id="q10Range" name="q10" min="0" max="4" value="0" required onchange="document.getElementById('q10Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
 
-          <h1>18. Gasto mensal disponível</h1>
-          <label><input type="radio" name="gasto" value="baixo" required> Baixo</label>
-          <label><input type="radio" name="gasto" value="medio"> Médio</label>
-          <label><input type="radio" name="gasto" value="alto"> Alto</label>
-        </div>
+  <div class="question">
+    <p>11. Quando o cão é examinado por um veterinário</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q11Visor" min="0" max="4" value="0" onchange="document.getElementById('q11Range').value=this.value" readonly>
+        <input type="range" id="q11Range" name="q11" min="0" max="4" value="0" required onchange="document.getElementById('q11Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
+</div>
 
-        <!-- STEP 7 -->
-        <div class="step">
-          <h1>19. Preferência de energia</h1>
-          <label><input type="radio" name="energia" value="alta" required> Alta</label>
-          <label><input type="radio" name="energia" value="media"> Média</label>
-          <label><input type="radio" name="energia" value="baixa"> Baixa</label>
+<!-- STEP 8: Medo e ansiedade (q12-q14) -->
+<div class="step">
+  <h1>8. Medo e ansiedade (continuação)</h1>
 
-          <h1>20. Tempo para passeios</h1>
-          <label><input type="radio" name="passeios" value="pouco" required> Pouco</label>
-          <label><input type="radio" name="passeios" value="medio"> Médio</label>
-          <label><input type="radio" name="passeios" value="muito"> Muito</label>
+  <div class="question">
+    <p>12. Quando o cão é abordado por um cão desconhecido (latidos, rosnados, mostrar dentes)</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q12Visor" min="0" max="4" value="0" onchange="document.getElementById('q12Range').value=this.value" readonly>
+        <input type="range" id="q12Range" name="q12" min="0" max="4" value="0" required onchange="document.getElementById('q12Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
 
-          <h1>21. Pode lidar com animais especiais?</h1>
-          <label><input type="radio" name="especiais" value="sim" required> Sim</label>
-          <label><input type="radio" name="especiais" value="nao"> Não</label>
-        </div>
+  <div class="question">
+    <p>13. Quando o cão tem a primeira exposição a situações desconhecidas (ex.: primeira viagem de carro, elevador, veterinário)</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q13Visor" min="0" max="4" value="0" onchange="document.getElementById('q13Range').value=this.value" readonly>
+        <input type="range" id="q13Range" name="q13" min="0" max="4" value="0" required onchange="document.getElementById('q13Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
 
-        <!-- STEP 8 -->
-        <div class="step">
-          <h1>22. Já adotou antes?</h1>
-          <label><input type="radio" name="adotou" value="sim" required> Sim</label>
-          <label><input type="radio" name="adotou" value="nao"> Não</label>
+  <div class="question">
+    <p>14. Quando o cão é banhado ou escovado</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q14Visor" min="0" max="4" value="0" onchange="document.getElementById('q14Range').value=this.value" readonly>
+        <input type="range" id="q14Range" name="q14" min="0" max="4" value="0" required onchange="document.getElementById('q14Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
+</div>
 
-          <h1>23. Pretende castrar?</h1>
-          <label><input type="radio" name="castrar" value="sim" required> Sim</label>
-          <label><input type="radio" name="castrar" value="nao"> Não</label>
+<!-- STEP 9: Separação (q15-q17) -->
+<div class="step">
+  <h1>9. Comportamentos relacionados à separação</h1>
+  <h1 class="descricao">
+    Defina seu grau de aceitação em relação a comportamentos que podem aparecer quando o cão fica sozinho.
+    Use a escala de 0 a 4, sendo 0 = não aceito e 4 = aceito totalmente.
+  </h1>
 
-          <h1>24. Motivo da adoção</h1>
-          <label><input type="radio" name="motivo" value="companhia" required> Companhia</label>
-          <label><input type="radio" name="motivo" value="crianca"> Presente para criança</label>
-          <label><input type="radio" name="motivo" value="outros"> Outros</label>
-        </div>
+  <div class="question">
+    <p>15. Tremores intensos</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q15Visor" min="0" max="4" value="0" onchange="document.getElementById('q15Range').value=this.value" readonly>
+        <input type="range" id="q15Range" name="q15" min="0" max="4" value="0" required onchange="document.getElementById('q15Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
 
-        <!-- STEP 9 -->
-        <div class="step">
-          <h1>25. Está disposto a compromisso de longo prazo?</h1>
-          <label><input type="radio" name="compromisso" value="sim" required> Sim</label>
-          <label><input type="radio" name="compromisso" value="nao"> Não</label>
-        </div>
+  <div class="question">
+    <p>16. Salivação excessiva</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q16Visor" min="0" max="4" value="0" onchange="document.getElementById('q16Range').value=this.value" readonly>
+        <input type="range" id="q16Range" name="q16" min="0" max="4" value="0" required onchange="document.getElementById('q16Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
 
+  <div class="question">
+    <p>17. Inquietação, agitação, sapateios</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q17Visor" min="0" max="4" value="0" onchange="document.getElementById('q17Range').value=this.value" readonly>
+        <input type="range" id="q17Range" name="q17" min="0" max="4" value="0" required onchange="document.getElementById('q17Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 10: Separação (q18-q20) -->
+<div class="step">
+  <h1>10. Comportamentos relacionados à separação (continuação)</h1>
+
+  <div class="question">
+    <p>18. Choro</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q18Visor" min="0" max="4" value="0" onchange="document.getElementById('q18Range').value=this.value" readonly>
+        <input type="range" id="q18Range" name="q18" min="0" max="4" value="0" required onchange="document.getElementById('q18Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>19. Latidos, uivos</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q19Visor" min="0" max="4" value="0" onchange="document.getElementById('q19Range').value=this.value" readonly>
+        <input type="range" id="q19Range" name="q19" min="0" max="4" value="0" required onchange="document.getElementById('q19Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>20. Comportamentos destrutivos (ex.: mordidas em móveis, objetos ou portas)</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q20Visor" min="0" max="4" value="0" onchange="document.getElementById('q20Range').value=this.value" readonly>
+        <input type="range" id="q20Range" name="q20" min="0" max="4" value="0" required onchange="document.getElementById('q20Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 11: Sociabilidade com humanos (q21-q23) -->
+<div class="step">
+  <h1>11. Sociabilidade com humanos</h1>
+  <h1 class="descricao">
+    Defina seu grau de aceitação em relação a interação do cão com pessoas conhecidas ou desconhecidas.
+    Use a escala de 0 a 4, sendo 0 = não aceito e 4 = aceito totalmente.
+  </h1>
+
+  <div class="question">
+    <p>21. Quando o cão conhece pessoas desconhecidas</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q21Visor" min="0" max="4" value="0" onchange="document.getElementById('q21Range').value=this.value" readonly>
+        <input type="range" id="q21Range" name="q21" min="0" max="4" value="0" required onchange="document.getElementById('q21Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>22. Quando o cão interage com crianças</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q22Visor" min="0" max="4" value="0" onchange="document.getElementById('q22Range').value=this.value" readonly>
+        <input type="range" id="q22Range" name="q22" min="0" max="4" value="0" required onchange="document.getElementById('q22Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>23. Quando o cão pede atenção ou carinho</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q23Visor" min="0" max="4" value="0" onchange="document.getElementById('q23Range').value=this.value" readonly>
+        <input type="range" id="q23Range" name="q23" min="0" max="4" value="0" required onchange="document.getElementById('q23Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 12: Sociabilidade com cães (q24-q26) -->
+<div class="step">
+  <h1>12. Sociabilidade com cães</h1>
+  <h1 class="descricao">
+    Defina seu grau de aceitação em relação à interação do cão com outros cães.
+    Use a escala de 0 a 4, sendo 0 = não aceito e 4 = aceito totalmente.
+  </h1>
+
+  <div class="question">
+    <p>24. Quando o cão interage com cães desconhecidos</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q24Visor" min="0" max="4" value="0" onchange="document.getElementById('q24Range').value=this.value" readonly>
+        <input type="range" id="q24Range" name="q24" min="0" max="4" value="0" required onchange="document.getElementById('q24Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>25. Quando o cão brinca com cães de diferentes portes</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q25Visor" min="0" max="4" value="0" onchange="document.getElementById('q25Range').value=this.value" readonly>
+        <input type="range" id="q25Range" name="q25" min="0" max="4" value="0" required onchange="document.getElementById('q25Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>26. Quando o cão é abordado por cães desconhecidos em passeios ou áreas externas</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q26Visor" min="0" max="4" value="0" onchange="document.getElementById('q26Range').value=this.value" readonly>
+        <input type="range" id="q26Range" name="q26" min="0" max="4" value="0" required onchange="document.getElementById('q26Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
+</div>
+<!-- STEP 13: Excitabilidade (q27-q29) -->
+<div class="step">
+  <h1>13. Excitabilidade</h1>
+  <h1 class="descricao">
+    Defina seu grau de aceitação em relação a cães que ficam muito excitados em determinadas situações.
+    Use a escala de 0 a 4, sendo 0 = não aceito e 4 = aceito totalmente.
+  </h1>
+
+  <div class="question">
+    <p>27. Quando alguém familiar chega perto após ausência</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q27Visor" min="0" max="4" value="0" onchange="document.getElementById('q27Range').value=this.value" readonly>
+        <input type="range" id="q27Range" name="q27" min="0" max="4" value="0" required onchange="document.getElementById('q27Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>28. Quando brinca com alguém familiar</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q28Visor" min="0" max="4" value="0" onchange="document.getElementById('q28Range').value=this.value" readonly>
+        <input type="range" id="q28Range" name="q28" min="0" max="4" value="0" required onchange="document.getElementById('q28Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>29. Quando passeia (carro, caminhada, puxando guia/coleira)</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q29Visor" min="0" max="4" value="0" onchange="document.getElementById('q29Range').value=this.value" readonly>
+        <input type="range" id="q29Range" name="q29" min="0" max="4" value="0" required onchange="document.getElementById('q29Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 14: Diversos comportamentos (q30-q33) -->
+<div class="step">
+  <h1>14. Diversos comportamentos</h1>
+  <h1 class="descricao">
+    Defina seu grau de aceitação em relação a outros comportamentos comuns em cães.
+    Use a escala de 0 a 4, sendo 0 = não aceito e 4 = aceito totalmente.
+  </h1>
+
+  <div class="question">
+    <p>30. Caça animais (gatos, pássaros, ratos, etc.)</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q30Visor" min="0" max="4" value="0" onchange="document.getElementById('q30Range').value=this.value" readonly>
+        <input type="range" id="q30Range" name="q30" min="0" max="4" value="0" required onchange="document.getElementById('q30Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>31. Foge ou tenta fugir para perambular na rua</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q31Visor" min="0" max="4" value="0" onchange="document.getElementById('q31Range').value=this.value" readonly>
+        <input type="range" id="q31Range" name="q31" min="0" max="4" value="0" required onchange="document.getElementById('q31Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>32. Rola/come excrementos ou outras substâncias mal-cheirosas</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q32Visor" min="0" max="4" value="0" onchange="document.getElementById('q32Range').value=this.value" readonly>
+        <input type="range" id="q32Range" name="q32" min="0" max="4" value="0" required onchange="document.getElementById('q32Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
+
+
+</div>
+  <div class="step">
+      <h1>14. Diversos comportamentos</h1>
+  <h1 class="descricao">
+    Defina seu grau de aceitação em relação a outros comportamentos comuns em cães.
+    Use a escala de 0 a 4, sendo 0 = não aceito e 4 = aceito totalmente.
+  </h1>
+  <div class="question">
+    <p>33. Roi objetos inapropriados / monta objetos ou pessoas / pede comida / urina/defeca em locais inapropriados / hiperativo ou se lambe excessivamente</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q33Visor" min="0" max="4" value="0" onchange="document.getElementById('q33Range').value=this.value" readonly>
+        <input type="range" id="q33Range" name="q33" min="0" max="4" value="0" required onchange="document.getElementById('q33Visor').value=this.value">
+      </div>
+      <div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div>
+    </div>
+  </div>
+</div>
         <!-- Botoes -->
         <div class="buttons">
           <button type="button" id="prevBtn">Voltar</button>

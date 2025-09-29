@@ -24,7 +24,7 @@ header {
 }
 
 .logo {
-    height: 8vh;
+    height: 15vh;
 }
 
 .containerTeste {
@@ -134,7 +134,7 @@ button:hover {
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
-input[type="text"], textarea {
+input[type="text"], #idade_aprox, textarea {
   color: #197f5a;
   width: 100%;
   border: #197f5a 2px solid;
@@ -142,13 +142,14 @@ input[type="text"], textarea {
   resize: none;
   font-family: "Inter", sans-serif;
   background-color: transparent;
+  font-family: 500;
 }
 input[type="text"] {
   height: 4vh;
 }
 input[type="file"]::file-selector-button {
   background-color: transparent;
-  border: #197f5a 2px solid; 
+  border: #197f5a 2px solid;
   padding: 3px;
   color: #197f5a;
 }
@@ -167,3 +168,154 @@ input, textarea {
 .fa-arrow-left:hover {
   color: #197f5a;
 }
+/* 
+  input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 300px;
+      height: 10px;
+      background:
+        repeating-linear-gradient(
+          to right,
+          #000 0,
+          #000 2px,
+          transparent 2px,
+          transparent 20%
+        ),
+        #ccc; 
+      border-radius: 4px;
+      outline: none;
+    }
+
+  
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 60px;   
+      height: 60px;
+      background: url("/tcc/front/assets/cachorroCursor.png") no-repeat center;
+      background-size: contain; 
+      border: none;
+      cursor: pointer;
+    }
+
+
+    input[type="range"]::-moz-range-thumb {
+      width: 40px;
+      height: 40px;
+      background: url("/tcc/front/assets/cachorroCursor.png") no-repeat center;
+      background-size: contain;
+      border: none;
+      cursor: pointer;
+    }
+    input[type="number"] {
+      background-color: transparent;
+      border: none;
+      color: #197f5a;
+      font-weight: 800;
+    } */
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 12px;
+  background: #d3d3d3;
+  border-radius: 6px;
+  outline: none;
+  margin: 40px 0 20px 0;
+}
+   input[type="number"] {
+      background-color: transparent;
+      border: none;
+      color: #197f5a;
+      font-weight: 800;
+    }
+
+/* trilha */
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 12px;
+  background: #d3d3d3;
+  border-radius: 6px;
+}
+input[type="range"]::-moz-range-track {
+  height: 12px;
+  background: #d3d3d3;
+  border-radius: 6px;
+}
+
+/* cachorro no polegar */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: url("/tcc/front/assets/cachorroCursor.png") no-repeat center;
+  background-size: contain;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  margin-top: -37px; /* centraliza */
+  margin-left: -10px;
+}
+input[type="range"]::-moz-range-thumb {
+  background: url("/tcc/front/assets/cachorroCursor.png") no-repeat center;
+  background-size: contain;
+  width: 60px;
+  height: 40px;
+  cursor: pointer;
+  border: none;
+}
+
+/* traços */
+.marks {
+  position: absolute;
+  top: 22px; /* altura alinhada com o trilho */
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px; /* compensação do tamanho do cachorro */
+}
+.marks span {
+  width: 2px;
+  height: 20px;
+  background: black;
+  display: block;
+}
+  /* números */
+    .numbers {
+      position: absolute;
+      top: 45px; /* abaixo dos traços */
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 30px; /* mesmo ajuste dos traços */
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      color: #197f5a;
+    }
+    .range-container {
+    width: 58vw; /* Ajuste conforme necessário */
+    position: relative;
+    margin: 30px auto;
+    text-align: center;
+    }
+
+  /* Marcas (ticks) embaixo */
+  .ticks {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: 14px;
+  }
+.question {
+  text-align: center;
+  margin: 20px 0;
+}
+  /* small responsive tweaks */
+      @media (max-width: 520px) {
+        .range-container input[type="number"] { width: 48px; font-size: 0.9rem; }
+        .range-container input[type="range"]::-webkit-slider-thumb { width: 48px; height: 34px; margin-top: -12px; }
+      }
+
+      /* keep visual harmony with your existing design */
+      .question p { margin: 6px 0; font-weight: 600; }

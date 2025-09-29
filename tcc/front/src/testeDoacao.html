@@ -1,145 +1,532 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste de doação</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Teste de doação - Escalas</title>
     <link rel="shortcut icon" href="/tcc/front/assets/logo.jpg" type="image/x-icon">
     <link rel="stylesheet" href="/tcc/front/src/style/teste.css">
     <script src="https://kit.fontawesome.com/98b6f9f041.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-<body>
-     <header>
-    <a href="javascript:history.back()"><i class="fa-solid fa-arrow-left"></i></a>
-        <img src="/tcc/front/assets/logo.png" alt="" class="logo">
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <a href="javascript:history.back()"><i class="fa-solid fa-arrow-left"></i></a>
+      <img src="/tcc/front/assets/logo.png" alt="" class="logo">
     </header>
-<main>
-  <div class="containerTeste">
-    <h2>Cadastro do <span class="verde">animalzinho</span>. Preencha todas as informações com atenção!</h2>
-    <div class="progress-container">
-      <div class="progress-bar" id="progressBar"></div>
-    </div>
 
-    <form id="cadastroAnimalForm" aria-required="">
-      <!-- STEP 1 -->
-      <div class="step active">
-        <h1>1. Informações iniciais</h1>
-        <br>
-        <p>Escolha a <span class="textoVerde">melhor</span> foto do animal (.JPG ou .PNG)</p>
-        <input type="file" id="fotoAnimal" name="foto" accept=".jpg,.png" multiple required>
-        <div id="previewContainer">
-          <img id="previewImg" src="" alt="Pré-visualização da foto" style="display:none;">
+    <main>
+      <div class="containerTeste">
+        <h2>Cadastro do <span class="verde">animalzinho</span>. Preencha todas as informações com atenção!</h2>
+
+        <div class="progress-container">
+          <div class="progress-bar" id="progressBar"></div>
         </div>
-        <br>
-        <p>Nome do animal:</p>
-        <input type="text" name="nome" placeholder="Ex: Luna, Thor, Mel..." required>
-        <br><br>
-        <p>Bio do animal (mínimo de 80 palavras):</p>
-        <textarea name="bio" rows="6" minlength="400"
-          placeholder="Escreva uma descrição detalhada sobre a personalidade, comportamento e cuidados."
-          required></textarea>
+
+        <form id="animalForm" enctype="multipart/form-data">
+          <!-- STEP 1 -->
+          <div class="step active">
+            <h1>1. Informações iniciais</h1>
+
+            <p>Escolha a <span class="textoVerde">melhor</span> foto do animal (.JPG ou .PNG)</p>
+            <input type="file" id="fotoAnimal" name="foto" accept=".jpg,.png" multiple required>
+            <div id="previewContainer"></div>
+
+            <p>Nome do animal:</p>
+            <input type="text" name="nome" placeholder="Ex: Luna, Thor, Mel..." required>
+
+            <p>Bio do animal (mínimo de 80 palavras):</p>
+            <textarea name="bio" rows="6" minlength="400" placeholder="Escreva uma descrição detalhada." required></textarea>
+          </div>
+
+          <!-- STEP 2 - identificação inicial (até 4 itens) -->
+          <div class="step">
+            <h1>2. Identificação inicial</h1>
+
+            <p>Porte do animal</p>
+            <label><input type="radio" name="porte" value="pequeno" required> Pequeno</label>
+            <label><input type="radio" name="porte" value="medio"> Médio</label>
+            <label><input type="radio" name="porte" value="grande"> Grande</label>
+
+            <p>Raça (ou SRD)</p>
+            <input type="text" name="raca" required>
+
+            <p>Idade aproximada</p>
+            <input type="number" id="idade_aprox" name="idade_aprox" required>
+          </div>
+
+          <!-- STEP 3 - vacinado/castrado/contato -->
+          <div class="step">
+            <h1>3. Saúde / contato</h1>
+
+            <p>Vacinado?</p>
+            <label><input type="radio" name="vacinado" value="sim" required> Sim</label>
+            <label><input type="radio" name="vacinado" value="nao"> Não</label>
+
+            <p>Castrado?</p>
+            <label><input type="radio" name="castrado" value="sim" required> Sim</label>
+            <label><input type="radio" name="castrado" value="nao"> Não</label>
+
+            <p>Forma de contato (Instagram / telefone / e-mail)</p>
+            <input type="text" name="contato" placeholder="@instagram / (11) 9xxxx-xxxx / email@ex.com" required>
+          </div>
+
+          <!-- STEP 1: Treinamento e obediência (q1-q2) -->
+<div class="step">
+  <h1>1. Treinamento e obediência</h1>
+  <h1 class="descricao">
+    Avalie o comportamento do cão em relação a obediência e treinamento. 
+    0- Nunca; 1- Raramente; 2- Às vezes; 3- Quase sempre; 4- Sempre.
+  </h1>
+
+  <div class="question">
+    <p>1. Obediência para instruções básicas (ex.: sentar, ficar, vir)</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q1Visor" min="0" max="4" value="" onchange="document.getElementById('q1Range').value=this.value" readonly>
+        <input type="range" id="q1Range" name="q1" min="0" max="4" value="0" required onchange="document.getElementById('q1Visor').value=this.value">
       </div>
-
-      <!-- STEP 2 -->
-      <div class="step">
-        <h1>2. Identificação básica</h1>
-        <label><input type="radio" name="especie" value="cao" required> Cão</label>
-        <label><input type="radio" name="especie" value="gato"> Gato</label>
-        <label><input type="radio" name="especie" value="outro"> Outro</label>
-        <input type="text" name="especie_outro" placeholder="Especifique se outro">
-
-        <h1>Sexo</h1>
-        <label><input type="radio" name="sexo" value="macho" required> Macho</label>
-        <label><input type="radio" name="sexo" value="femea"> Fêmea</label>
-
-        <h1>Idade aproximada</h1>
-        <label><input type="radio" name="idade" value="filhote" required> Filhote</label>
-        <label><input type="radio" name="idade" value="jovem"> Jovem</label>
-        <label><input type="radio" name="idade" value="adulto"> Adulto</label>
-        <label><input type="radio" name="idade" value="idoso"> Idoso</label>
-      </div>
-
-      <!-- STEP 3 -->
-      <div class="step">
-        <h1>3. Características físicas</h1>
-        <label><input type="radio" name="porte" value="pequeno" required> Pequeno</label>
-        <label><input type="radio" name="porte" value="medio"> Médio</label>
-        <label><input type="radio" name="porte" value="grande"> Grande</label>
-
-        <h1>Pelagem</h1>
-        <label><input type="radio" name="pelagem" value="curto" required> Pelo curto</label>
-        <label><input type="radio" name="pelagem" value="medio"> Pelo médio</label>
-        <label><input type="radio" name="pelagem" value="longo"> Pelo longo</label>
-        <label><input type="radio" name="pelagem" value="hipo"> Hipoalergênico</label>
-      </div>
-
-      <!-- STEP 4 -->
-      <div class="step">
-        <h1>4. Saúde e cuidados</h1>
-        <label><input type="radio" name="castrado" value="sim" required> Castrado</label>
-        <label><input type="radio" name="castrado" value="nao"> Não</label>
-        <label><input type="radio" name="castrado" value="sera"> Será castrado antes da adoção</label>
-
-        <h1>Condição de saúde</h1>
-        <label><input type="radio" name="saude" value="sim"> Sim</label>
-        <input type="text" name="saude_especificar" placeholder="Especifique">
-        <label><input type="radio" name="saude" value="nao"> Não</label>
-        <label><input type="radio" name="saude" value="tratamento"> Em tratamento</label>
-        <label><input type="radio" name="saude" value="historico"> Histórico tratado</label>
-      </div>
-
-      <!-- STEP 5 -->
-      <div class="step">
-        <h1>5. Personalidade e comportamento</h1>
-        <label><input type="radio" name="energia" value="baixa" required> Baixa</label>
-        <label><input type="radio" name="energia" value="media"> Média</label>
-        <label><input type="radio" name="energia" value="alta"> Alta</label>
-
-        <h1>Sociável com crianças?</h1>
-        <label><input type="radio" name="criancas" value="sim" required> Sim</label>
-        <label><input type="radio" name="criancas" value="nao"> Não</label>
-        <label><input type="radio" name="criancas" value="nao_testado"> Não testado</label>
-      </div>
-
-      <!-- STEP 6 -->
-      <div class="step">
-        <h1>6. Outras informações</h1>
-        <label><input type="radio" name="local" value="abrigo" required> Em abrigo</label>
-        <label><input type="radio" name="local" value="lar_temp"> Lar temporário</label>
-        <label><input type="radio" name="local" value="casa_resp"> Casa do responsável</label>
-        <label><input type="radio" name="local" value="outro"> Outro</label>
-        <input type="text" name="outro_local" placeholder="Especifique">
-
-        <h1>Observações adicionais</h1>
-        <textarea name="observacoes" rows="4"></textarea>
-      </div>
-
-      <!-- Botões -->
-      <div class="buttons">
-        <button type="button" id="prevBtn">Voltar</button>
-        <button type="button" id="nextBtn">Confirmar respostas</button>
-      </div>
-    </form>
-  <div id="cropModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); justify-content:center; align-items:center; z-index:1000;">
-      <div style="background:white; padding:20px; border-radius:10px; max-width:600px; width:90%;">
-        <h3>Corte a imagem</h3>
-        <div>
-          <img id="imageToCrop" style="max-width:100%;">
-        </div>
-        <br>
-        <button id="cropBtn">Cortar</button>
-        <button id="cancelCrop">Cancelar</button>
+      <div class="ticks">
+        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
       </div>
     </div>
   </div>
-</main>
 
-   <script src="/tcc/front/src/script/teste.js"></script>
-</body>
+  <div class="question">
+    <p>2. É devagar para aprender novos truques e tarefas</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q2Visor" min="0" max="4" value="0" onchange="document.getElementById('q2Range').value=this.value" readonly>
+        <input type="range" id="q2Range" name="q2" min="0" max="4" value="0" required onchange="document.getElementById('q2Visor').value=this.value">
+      </div>
+      <div class="ticks">
+        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 2: Agressão (q3-q5) -->
+<div class="step">
+  <h1>2. Agressão</h1>
+  <h1 class="descricao">
+    Avalie o comportamento do cão em situações de possível agressividade. 
+    0- Nenhuma agressividade; 4- Agressividade intensa.
+  </h1>
+
+  <div class="question">
+    <p>3. Quando é corrigido/punido verbalmente</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q3Visor" min="0" max="4" value="0" onchange="document.getElementById('q3Range').value=this.value" readonly>
+        <input type="range" id="q3Range" name="q3" min="0" max="4" value="0" required onchange="document.getElementById('q3Visor').value=this.value">
+      </div>
+      <div class="ticks">
+        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>4. Quando abordado por pessoa desconhecida enquanto passeia</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q4Visor" min="0" max="4" value="0" onchange="document.getElementById('q4Range').value=this.value" readonly>
+        <input type="range" id="q4Range" name="q4" min="0" max="4" value="0" required onchange="document.getElementById('q4Visor').value=this.value">
+      </div>
+      <div class="ticks">
+        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>5. Quando brinquedos, ossos ou objetos são retirados</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q5Visor" min="0" max="4" value="0" onchange="document.getElementById('q5Range').value=this.value" readonly>
+        <input type="range" id="q5Range" name="q5" min="0" max="4" value="0" required onchange="document.getElementById('q5Visor').value=this.value">
+      </div>
+      <div class="ticks">
+        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 3: Agressão - continuação (q6-q8) -->
+<div class="step">
+  <h1>3. Agressão - continuação</h1>
+  <h1 class="descricao">
+    Continue avaliando possíveis sinais de agressividade. 
+    0- Nenhuma agressividade; 4- Agressividade intensa.
+  </h1>
+
+  <div class="question">
+    <p>6. Quando é banhado ou escovado</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q6Visor" min="0" max="4" value="0" onchange="document.getElementById('q6Range').value=this.value" readonly>
+        <input type="range" id="q6Range" name="q6" min="0" max="4" value="0" required onchange="document.getElementById('q6Visor').value=this.value">
+      </div>
+      <div class="ticks">
+        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>7. Quando alguém se aproxima enquanto come/retira a comida</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q7Visor" min="0" max="4" value="0" onchange="document.getElementById('q7Range').value=this.value" readonly>
+        <input type="range" id="q7Range" name="q7" min="0" max="4" value="0" required onchange="document.getElementById('q7Visor').value=this.value">
+      </div>
+      <div class="ticks">
+        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>8. Quando abordado por animais desconhecidos</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q8Visor" min="0" max="4" value="0" onchange="document.getElementById('q8Range').value=this.value" readonly>
+        <input type="range" id="q8Range" name="q8" min="0" max="4" value="0" required onchange="document.getElementById('q8Visor').value=this.value">
+      </div>
+      <div class="ticks">
+        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 4: Medo e Ansiedade (q9-q11) -->
+<div class="step">
+  <h1>4. Medo e ansiedade</h1>
+  <h1 class="descricao">
+    Avalie o comportamento do cão em possíveis situações de medo e ansiedade. 
+    0- Sem medo/ansiedade; 4- Medo extremo.
+  </h1>
+
+  <div class="question">
+    <p>9. Quando abordado por pessoa desconhecida (adulto ou criança)</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q9Visor" min="0" max="4" value="0" onchange="document.getElementById('q9Range').value=this.value" readonly>
+        <input type="range" id="q9Range" name="q9" min="0" max="4" value="0" required onchange="document.getElementById('q9Visor').value=this.value">
+      </div>
+      <div class="ticks">
+        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>10. Em resposta a barulhos altos/subtos (aspirador, fogos, tempestades)</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q10Visor" min="0" max="4" value="0" onchange="document.getElementById('q10Range').value=this.value" readonly>
+        <input type="range" id="q10Range" name="q10" min="0" max="4" value="0" required onchange="document.getElementById('q10Visor').value=this.value">
+      </div>
+      <div class="ticks">
+        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>11. Quando examinado por um veterinário</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q11Visor" min="0" max="4" value="0" onchange="document.getElementById('q11Range').value=this.value" readonly>
+        <input type="range" id="q11Range" name="q11" min="0" max="4" value="0" required onchange="document.getElementById('q11Visor').value=this.value">
+      </div>
+      <div class="ticks">
+        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- STEP 5: Medo e Ansiedade (q12-q14) -->
+<div class="step">
+  <h1>5. Medo e ansiedade - continuação</h1>
+  <h1 class="descricao">
+    Continue avaliando o comportamento do cão em possíveis situações de medo e ansiedade. 
+    0- Sem medo/ansiedade; 4- Medo extremo.
+  </h1>
+
+  <div class="question">
+    <p>12. Quando exposto a superfícies desconhecidas (escadas, pisos escorregadios, elevadores)</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q12Visor" min="0" max="4" value="0" readonly>
+        <input type="range" id="q12Range" name="q12" min="0" max="4" value="0" required onchange="document.getElementById('q12Visor').value=this.value">
+      </div>
+      <div class="ticks">
+        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>13. Quando separado de seus donos ou deixado sozinho</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q13Visor" min="0" max="4" value="0" readonly>
+        <input type="range" id="q13Range" name="q13" min="0" max="4" value="0" required onchange="document.getElementById('q13Visor').value=this.value">
+      </div>
+      <div class="ticks">
+        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>14. Em ambientes novos (casa de amigos, pet shop, hotelzinho)</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q14Visor" min="0" max="4" value="0" readonly>
+        <input type="range" id="q14Range" name="q14" min="0" max="4" value="0" required onchange="document.getElementById('q14Visor').value=this.value">
+      </div>
+      <div class="ticks">
+        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 6: Atividade e energia (q15-q17) -->
+<div class="step">
+  <h1>6. Atividade e energia</h1>
+  <h1 class="descricao">
+    Avalie os níveis de energia do cão. 
+    0- Muito baixo; 4- Muito alto.
+  </h1>
+
+  <div class="question">
+    <p>15. Nível de energia em casa (quando sozinho ou com a família)</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q15Visor" min="0" max="4" value="0" readonly>
+        <input type="range" id="q15Range" name="q15" min="0" max="4" value="0" required onchange="document.getElementById('q15Visor').value=this.value">
+      </div>
+      <div class="ticks">
+        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>16. Necessidade de exercícios físicos diários</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q16Visor" min="0" max="4" value="0" readonly>
+        <input type="range" id="q16Range" name="q16" min="0" max="4" value="0" required onchange="document.getElementById('q16Visor').value=this.value">
+      </div>
+      <div class="ticks">
+        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>17. Comportamento em passeios longos ou corridas</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q17Visor" min="0" max="4" value="0" readonly>
+        <input type="range" id="q17Range" name="q17" min="0" max="4" value="0" required onchange="document.getElementById('q17Visor').value=this.value">
+      </div>
+      <div class="ticks">
+        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 7: Sociabilidade (q18-q20) -->
+<div class="step">
+  <h1>7. Sociabilidade</h1>
+  <h1 class="descricao">
+    Avalie como o cão se comporta socialmente. 
+    0- Nada sociável; 4- Muito sociável.
+  </h1>
+
+  <div class="question">
+    <p>18. Com crianças pequenas</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q18Visor" min="0" max="4" value="0" readonly>
+        <input type="range" id="q18Range" name="q18" min="0" max="4" value="0" required onchange="document.getElementById('q18Visor').value=this.value">
+      </div>
+      <div class="ticks">
+        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>19. Com outros cães</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q19Visor" min="0" max="4" value="0" readonly>
+        <input type="range" id="q19Range" name="q19" min="0" max="4" value="0" required onchange="document.getElementById('q19Visor').value=this.value">
+      </div>
+      <div class="ticks">
+        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>20. Com pessoas estranhas</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q20Visor" min="0" max="4" value="0" readonly>
+        <input type="range" id="q20Range" name="q20" min="0" max="4" value="0" required onchange="document.getElementById('q20Visor').value=this.value">
+      </div>
+      <div class="ticks">
+        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 8: Comportamentos indesejados (q21-q23) -->
+<div class="step">
+  <h1>8. Comportamentos indesejados</h1>
+  <h1 class="descricao">
+    Avalie a frequência de comportamentos indesejados. 
+    0- Nunca; 4- Sempre.
+  </h1>
+
+  <div class="question">
+    <p>21. Latir excessivamente</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q21Visor" min="0" max="4" value="0" readonly>
+        <input type="range" id="q21Range" name="q21" min="0" max="4" value="0" required onchange="document.getElementById('q21Visor').value=this.value">
+      </div>
+      <div class="ticks">
+        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>22. Destruir objetos (móveis, sapatos, brinquedos)</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q22Visor" min="0" max="4" value="0" readonly>
+        <input type="range" id="q22Range" name="q22" min="0" max="4" value="0" required onchange="document.getElementById('q22Visor').value=this.value">
+      </div>
+      <div class="ticks">
+        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>23. Fugir ou tentar escapar de casa</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q23Visor" min="0" max="4" value="0" readonly>
+        <input type="range" id="q23Range" name="q23" min="0" max="4" value="0" required onchange="document.getElementById('q23Visor').value=this.value">
+      </div>
+      <div class="ticks">
+        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 9: Adaptação ao ambiente (q24-q26) -->
+<div class="step">
+  <h1>9. Adaptação ao ambiente</h1>
+  <h1 class="descricao">
+    Avalie como o cão se adapta a mudanças de ambiente. 
+    0- Muito difícil; 4- Muito fácil.
+  </h1>
+
+  <div class="question">
+    <p>24. Mudar de residência</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q24Visor" min="0" max="4" value="0" readonly>
+        <input type="range" id="q24Range" name="q24" min="0" max="4" value="0" required onchange="document.getElementById('q24Visor').value=this.value">
+      </div>
+      <div class="ticks">
+        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>25. Mudança na rotina (horários de alimentação, passeios)</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q25Visor" min="0" max="4" value="0" readonly>
+        <input type="range" id="q25Range" name="q25" min="0" max="4" value="0" required onchange="document.getElementById('q25Visor').value=this.value">
+      </div>
+      <div class="ticks">
+        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="question">
+    <p>26. Aceitar novas pessoas na casa</p>
+    <div class="range-container">
+      <div class="range-row">
+        <input type="number" id="q26Visor" min="0" max="4" value="0" readonly>
+        <input type="range" id="q26Range" name="q26" min="0" max="4" value="0" required onchange="document.getElementById('q26Visor').value=this.value">
+      </div>
+      <div class="ticks">
+        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 10: Observações finais -->
+<div class="step">
+  <h1>10. Observações finais</h1>
+  <h1 class="descricao">
+    Caso queira, escreva observações adicionais sobre o comportamento do cão.
+  </h1>
+
+  <textarea name="observacoes" rows="6" style="width:100%;"></textarea>
+</div>
+  <!-- Botoes -->
+        <div class="buttons">
+          <button type="button" id="prevBtn">Voltar</button>
+          <button type="button" id="nextBtn">Confirmar respostas</button>
+        </div>
+</div>
+ 
+        </form>
+
+        <!-- Modal de crop (mantive sua estrutura) -->
+        <div id="cropModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); justify-content:center; align-items:center; z-index:1000;">
+          <div style="background:white; padding:20px; border-radius:10px; max-width:600px; width:90%;">
+            <h3>Corte a imagem</h3>
+            <div>
+              <img id="imageToCrop" style="max-width:100%;">
+            </div>
+            <br>
+            <button id="cropBtn">Cortar</button>
+            <button id="cancelCrop">Cancelar</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="/tcc/front/src/script/teste.js"></script>
+  </body>
 </html>

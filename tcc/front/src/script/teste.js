@@ -12,6 +12,9 @@ function showStep(n) {
   prevBtn.style.display = n === 0 ? "none" : "inline-block";
   nextBtn.textContent = n === steps.length - 1 ? "Enviar" : "Confirmar respostas";
   progressBar.style.width = ((n + 1) / steps.length) * 100 + "%";
+
+  // Scroll automático para o topo da página
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 nextBtn.addEventListener("click", () => {
@@ -30,10 +33,10 @@ nextBtn.addEventListener("click", () => {
     }
   });
 
-  if (!valid) {
-    alert("Por favor, preencha todas as perguntas antes de continuar!");
-    return;
-  }
+  // if (!valid) {
+  //   alert("Por favor, preencha todas as perguntas antes de continuar!");
+  //   return;
+  // }
 
   if (currentStep < steps.length - 1) {
     currentStep++;
@@ -72,12 +75,11 @@ fotoInput.addEventListener("change", (e) => {
   reader.onload = (ev) => {
     imageToCrop.src = ev.target.result;
 
-    // Espera a imagem carregar antes de criar o cropper
     imageToCrop.onload = () => {
       cropModal.style.display = "flex";
       if (cropper) cropper.destroy();
       cropper = new Cropper(imageToCrop, {
-        aspectRatio: 4 / 3, // corte retangular
+        aspectRatio: 4 / 3,
         viewMode: 1,
         autoCropArea: 1
       });
@@ -86,13 +88,9 @@ fotoInput.addEventListener("change", (e) => {
   reader.readAsDataURL(file);
 });
 
-// Botão cortar
 cropBtn.addEventListener("click", () => {
   if (cropper) {
-    const canvas = cropper.getCroppedCanvas({
-      width: 400,
-      height: 300,
-    });
+    const canvas = cropper.getCroppedCanvas({ width: 400, height: 300 });
 
     const croppedImg = document.createElement("img");
     croppedImg.src = canvas.toDataURL("image/png");
@@ -101,7 +99,7 @@ cropBtn.addEventListener("click", () => {
     croppedImg.style.borderRadius = "8px";
     croppedImg.style.boxShadow = "0 2px 6px rgba(0,0,0,0.2)";
 
-    previewContainer.innerHTML = ""; // limpa previews anteriores
+    previewContainer.innerHTML = "";
     previewContainer.appendChild(croppedImg);
 
     cropModal.style.display = "none";
@@ -110,7 +108,6 @@ cropBtn.addEventListener("click", () => {
   }
 });
 
-// Botão cancelar
 cancelCrop.addEventListener("click", () => {
   cropModal.style.display = "none";
   if (cropper) {
@@ -118,4 +115,3 @@ cancelCrop.addEventListener("click", () => {
     cropper = null;
   }
 });
-
