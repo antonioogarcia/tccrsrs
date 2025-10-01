@@ -23,7 +23,7 @@
 
     <main>
       <div class="containerTeste">
-        <h2>Cadastro do <span class="verde">animalzinho</span>. Preencha todas as informações com atenção!</h2>
+        <h2>Cadastro do <span class="verde">cachorrinho</span>. Atenção as descrições e preencha todas as informações com atenção!</h2>
 
         <div class="progress-container">
           <div class="progress-bar" id="progressBar"></div>
@@ -34,28 +34,28 @@
           <div class="step active">
             <h1>1. Informações iniciais</h1>
 
-            <p>Escolha a <span class="textoVerde">melhor</span> foto do animal (.JPG ou .PNG)</p>
+            <p>Escolha a <span class="textoVerde">melhor</span> foto do cachorro (.JPG ou .PNG)</p>
             <input type="file" id="fotoAnimal" name="foto" accept=".jpg,.png" multiple required>
             <div id="previewContainer"></div>
 
-            <p>Nome do animal:</p>
+            <p>Nome do cachorro:</p>
             <input type="text" name="nome" placeholder="Ex: Luna, Thor, Mel..." required>
 
-            <p>Bio do animal (mínimo de 80 palavras):</p>
-            <textarea name="bio" rows="6" minlength="400" placeholder="Escreva uma descrição detalhada." required></textarea>
+            <p>Bio do cachorro (mínimo de 80 palavras):</p>
+            <textarea name="bio" rows="6" minlength="400" placeholder="Escreva uma descrição detalhada (fale sobre a aparência física, comportamentos diários, personalidade do canino, etc...)." required></textarea>
           </div>
 
           <!-- STEP 2 - identificação inicial (até 4 itens) -->
           <div class="step">
             <h1>2. Identificação inicial</h1>
 
-            <p>Porte do animal</p>
+            <p>Porte do cachorro</p>
             <label><input type="radio" name="porte" value="pequeno" required> Pequeno</label>
             <label><input type="radio" name="porte" value="medio"> Médio</label>
             <label><input type="radio" name="porte" value="grande"> Grande</label>
 
             <p>Raça (ou SRD)</p>
-            <input type="text" name="raca" required>
+            <input type="text" name="raca" placeholder="Ex: Pastor Alemão, Pug / SRD = Sem raça definida" required>
 
             <p>Idade aproximada</p>
             <input type="number" id="idade_aprox" name="idade_aprox" required>
@@ -65,16 +65,16 @@
           <div class="step">
             <h1>3. Saúde / contato</h1>
 
-            <p>Vacinado?</p>
+            <p>O animal é vacinado?</p>
             <label><input type="radio" name="vacinado" value="sim" required> Sim</label>
             <label><input type="radio" name="vacinado" value="nao"> Não</label>
 
-            <p>Castrado?</p>
+            <p>O animal é castrado?</p>
             <label><input type="radio" name="castrado" value="sim" required> Sim</label>
             <label><input type="radio" name="castrado" value="nao"> Não</label>
 
             <p>Forma de contato (Instagram / telefone / e-mail)</p>
-            <input type="text" name="contato" placeholder="@instagram / (11) 9xxxx-xxxx / email@ex.com" required>
+            <input type="text" name="contato" placeholder="@instagram / (xx) 9xxxx-xxxx / email@ex.com" required>
           </div>
 
           <!-- STEP 1: Treinamento e obediência (q1-q2) -->
@@ -162,9 +162,9 @@
 
 <!-- STEP 3: Agressão - continuação (q6-q8) -->
 <div class="step">
-  <h1>3. Agressão - continuação</h1>
+  <h1>2.1. Agressão</h1>
   <h1 class="descricao">
-    Continue avaliando possíveis sinais de agressividade. 
+    Avalie o comportamento do cão em situações de possível agressividade. 
     0- Nenhuma agressividade; 4- Agressividade intensa.
   </h1>
 
@@ -210,7 +210,7 @@
 
 <!-- STEP 4: Medo e Ansiedade (q9-q11) -->
 <div class="step">
-  <h1>4. Medo e ansiedade</h1>
+  <h1>3. Medo e ansiedade</h1>
   <h1 class="descricao">
     Avalie o comportamento do cão em possíveis situações de medo e ansiedade. 
     0- Sem medo/ansiedade; 4- Medo extremo.
@@ -257,9 +257,9 @@
 </div>
   <!-- STEP 5: Medo e Ansiedade (q12-q14) -->
 <div class="step">
-  <h1>5. Medo e ansiedade - continuação</h1>
+  <h1>3.1. Medo e Ansiedade</h1>
   <h1 class="descricao">
-    Continue avaliando o comportamento do cão em possíveis situações de medo e ansiedade. 
+    Avalie o comportamento do cão em possíveis situações de medo e ansiedade. 
     0- Sem medo/ansiedade; 4- Medo extremo.
   </h1>
 
@@ -303,16 +303,16 @@
   </div>
 </div>
 
-<!-- STEP 6: Atividade e energia (q15-q17) -->
+<!-- STEP 4: Comportamentos relacionados à separação (q15-q20) -->
 <div class="step">
-  <h1>6. Atividade e energia</h1>
+  <h1>4. Comportamentos relacionados à separação</h1>
   <h1 class="descricao">
-    Avalie os níveis de energia do cão. 
-    0- Muito baixo; 4- Muito alto.
+    Avalie o comportamento do cão em situações de possíveis comportamentos relacionados à separação. <br>
+    0- Nunca; 1- Raramente; 2- Às vezes; 3- Quase sempre; 4- Sempre.
   </h1>
 
   <div class="question">
-    <p>15. Nível de energia em casa (quando sozinho ou com a família)</p>
+    <p>15. Tremores intensos</p>
     <div class="range-container">
       <div class="range-row">
         <input type="number" id="q15Visor" min="0" max="4" value="0" readonly>
@@ -325,7 +325,7 @@
   </div>
 
   <div class="question">
-    <p>16. Necessidade de exercícios físicos diários</p>
+    <p>16. Salivação excessiva</p>
     <div class="range-container">
       <div class="range-row">
         <input type="number" id="q16Visor" min="0" max="4" value="0" readonly>
@@ -338,7 +338,7 @@
   </div>
 
   <div class="question">
-    <p>17. Comportamento em passeios longos ou corridas</p>
+    <p>17. Inquietação, agitação, sapateios</p>
     <div class="range-container">
       <div class="range-row">
         <input type="number" id="q17Visor" min="0" max="4" value="0" readonly>
@@ -350,17 +350,15 @@
     </div>
   </div>
 </div>
-
-<!-- STEP 7: Sociabilidade (q18-q20) -->
 <div class="step">
-  <h1>7. Sociabilidade</h1>
+  <h1>6. Diversos</h1>
   <h1 class="descricao">
-    Avalie como o cão se comporta socialmente. 
-    0- Nada sociável; 4- Muito sociável.
+    Avalie o comportamento do cão em alguns temas diversos. <br>
+    0- Nunca; 1- Raramente; 2- Às vezes; 3- Quase sempre; 4- Sempre.
   </h1>
-
+  
   <div class="question">
-    <p>18. Com crianças pequenas</p>
+    <p>18. Choro</p>
     <div class="range-container">
       <div class="range-row">
         <input type="number" id="q18Visor" min="0" max="4" value="0" readonly>
@@ -373,7 +371,7 @@
   </div>
 
   <div class="question">
-    <p>19. Com outros cães</p>
+    <p>19. Latidos, uivos</p>
     <div class="range-container">
       <div class="range-row">
         <input type="number" id="q19Visor" min="0" max="4" value="0" readonly>
@@ -386,7 +384,7 @@
   </div>
 
   <div class="question">
-    <p>20. Com pessoas estranhas</p>
+    <p>20. Arranha/mastiga portas, chão, janelas, cortinas, etc</p>
     <div class="range-container">
       <div class="range-row">
         <input type="number" id="q20Visor" min="0" max="4" value="0" readonly>
@@ -399,16 +397,16 @@
   </div>
 </div>
 
-<!-- STEP 8: Comportamentos indesejados (q21-q23) -->
+<!-- STEP 5: Excitabilidade (q21-q23) -->
 <div class="step">
-  <h1>8. Comportamentos indesejados</h1>
+  <h1>5. Excitabilidade</h1>
   <h1 class="descricao">
-    Avalie a frequência de comportamentos indesejados. 
-    0- Nunca; 4- Sempre.
+    Avalie o comportamento do cão em situações de possível excitabilidade. <br>
+    0- Nunca; 1- Raramente; 2- Às vezes; 3- Quase sempre; 4- Sempre.
   </h1>
 
   <div class="question">
-    <p>21. Latir excessivamente</p>
+    <p>21. Quando alguém familiar chega após a ausência</p>
     <div class="range-container">
       <div class="range-row">
         <input type="number" id="q21Visor" min="0" max="4" value="0" readonly>
@@ -421,7 +419,7 @@
   </div>
 
   <div class="question">
-    <p>22. Destruir objetos (móveis, sapatos, brinquedos)</p>
+    <p>22. Quando brinca com alguém familiar</p>
     <div class="range-container">
       <div class="range-row">
         <input type="number" id="q22Visor" min="0" max="4" value="0" readonly>
@@ -434,7 +432,7 @@
   </div>
 
   <div class="question">
-    <p>23. Fugir ou tentar escapar de casa</p>
+    <p>23. Quando passeia (de carro, caminhada, puxando excessivamente a guia/coleira)</p>
     <div class="range-container">
       <div class="range-row">
         <input type="number" id="q23Visor" min="0" max="4" value="0" readonly>
@@ -447,53 +445,106 @@
   </div>
 </div>
 
-<!-- STEP 9: Adaptação ao ambiente (q24-q26) -->
+<!-- STEP 6: Diversos (q24-q33) -->
 <div class="step">
-  <h1>9. Adaptação ao ambiente</h1>
+  <h1>6. Diversos</h1>
   <h1 class="descricao">
-    Avalie como o cão se adapta a mudanças de ambiente. 
-    0- Muito difícil; 4- Muito fácil.
+    Avalie o comportamento do cão em alguns temas diversos. <br>
+    0- Nunca; 1- Raramente; 2- Às vezes; 3- Quase sempre; 4- Sempre.
   </h1>
 
-  <div class="question">
-    <p>24. Mudar de residência</p>
-    <div class="range-container">
-      <div class="range-row">
-        <input type="number" id="q24Visor" min="0" max="4" value="0" readonly>
-        <input type="range" id="q24Range" name="q24" min="0" max="4" value="0" required onchange="document.getElementById('q24Visor').value=this.value">
-      </div>
-      <div class="ticks">
-        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
-      </div>
-    </div>
+  <div class="question"><p>24. Caça animais (gatos, pássaros, ratos, etc)</p>
+    <div class="range-container"><div class="range-row">
+      <input type="number" id="q24Visor" min="0" max="4" value="0" readonly>
+      <input type="range" id="q24Range" name="q24" min="0" max="4" value="0" required onchange="document.getElementById('q24Visor').value=this.value">
+    </div><div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div></div>
   </div>
 
-  <div class="question">
-    <p>25. Mudança na rotina (horários de alimentação, passeios)</p>
-    <div class="range-container">
-      <div class="range-row">
-        <input type="number" id="q25Visor" min="0" max="4" value="0" readonly>
-        <input type="range" id="q25Range" name="q25" min="0" max="4" value="0" required onchange="document.getElementById('q25Visor').value=this.value">
-      </div>
-      <div class="ticks">
-        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
-      </div>
-    </div>
+  <div class="question"><p>25. Foge ou tenta fugir para perambular na rua</p>
+    <div class="range-container"><div class="range-row">
+      <input type="number" id="q25Visor" min="0" max="4" value="0" readonly>
+      <input type="range" id="q25Range" name="q25" min="0" max="4" value="0" required onchange="document.getElementById('q25Visor').value=this.value">
+    </div><div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div></div>
   </div>
 
-  <div class="question">
-    <p>26. Aceitar novas pessoas na casa</p>
-    <div class="range-container">
-      <div class="range-row">
-        <input type="number" id="q26Visor" min="0" max="4" value="0" readonly>
-        <input type="range" id="q26Range" name="q26" min="0" max="4" value="0" required onchange="document.getElementById('q26Visor').value=this.value">
-      </div>
-      <div class="ticks">
-        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
-      </div>
-    </div>
+  <div class="question"><p>26. Rola/come excrementos ou substâncias "mal-cheirosas"</p>
+    <div class="range-container"><div class="range-row">
+      <input type="number" id="q26Visor" min="0" max="4" value="0" readonly>
+      <input type="range" id="q26Range" name="q26" min="0" max="4" value="0" required onchange="document.getElementById('q26Visor').value=this.value">
+    </div><div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div></div>
   </div>
 </div>
+<div class="step">
+  <h1>6.1. Diversos</h1>
+  <h1 class="descricao">
+    Avalie o comportamento do cão em alguns temas diversos. <br>
+    0- Nunca; 1- Raramente; 2- Às vezes; 3- Quase sempre; 4- Sempre.
+  </h1>
+
+  <div class="question"><p>27. Roi objetos inapropriados</p>
+    <div class="range-container"><div class="range-row">
+      <input type="number" id="q27Visor" min="0" max="4" value="0" readonly>
+      <input type="range" id="q27Range" name="q27" min="0" max="4" value="0" required onchange="document.getElementById('q27Visor').value=this.value">
+    </div><div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div></div>
+  </div>
+
+  <div class="question"><p>28. Monta (tenta cruzar com) objetos, mobília ou pessoas</p>
+    <div class="range-container"><div class="range-row">
+      <input type="number" id="q28Visor" min="0" max="4" value="0" readonly>
+      <input type="range" id="q28Range" name="q28" min="0" max="4" value="0" required onchange="document.getElementById('q28Visor').value=this.value">
+    </div><div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div></div>
+  </div>
+
+  <div class="question"><p>29. Pede/rouba comida quando há alguém comendo</p>
+    <div class="range-container"><div class="range-row">
+      <input type="number" id="q29Visor" min="0" max="4" value="0" readonly>
+      <input type="range" id="q29Range" name="q29" min="0" max="4" value="0" required onchange="document.getElementById('q29Visor').value=this.value">
+    </div><div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div></div>
+  </div>
+</div>
+<div class="step">
+  <h1>6.2. Diversos</h1>
+  <h1 class="descricao">
+    Avalie o comportamento do cão em alguns temas diversos. <br>
+    0- Nunca; 1- Raramente; 2- Às vezes; 3- Quase sempre; 4- Sempre.
+  </h1>
+
+  <div class="question"><p>30. Urina/defeca em lugares ou momentos inapropriados</p>
+    <div class="range-container"><div class="range-row">
+      <input type="number" id="q30Visor" min="0" max="4" value="0" readonly>
+      <input type="range" id="q30Range" name="q30" min="0" max="4" value="0" required onchange="document.getElementById('q30Visor').value=this.value">
+    </div><div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div></div>
+  </div>
+
+  <div class="question"><p>31. Hiperativo, inquieto, ativo, brincalhão, energético</p>
+    <div class="range-container"><div class="range-row">
+      <input type="number" id="q31Visor" min="0" max="4" value="0" readonly>
+      <input type="range" id="q31Range" name="q31" min="0" max="4" value="0" required onchange="document.getElementById('q31Visor').value=this.value">
+    </div><div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div></div>
+  </div>
+
+  <div class="question"><p>32. Late persistentemente quando alarmado ou excitado</p>
+    <div class="range-container"><div class="range-row">
+      <input type="number" id="q32Visor" min="0" max="4" value="0" readonly>
+      <input type="range" id="q32Range" name="q32" min="0" max="4" value="0" required onchange="document.getElementById('q32Visor').value=this.value">
+    </div><div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div></div>
+  </div>
+  </div>
+  <div class="step">
+  <h1>6.3. Diversos</h1>
+  <h1 class="descricao">
+    Avalie o comportamento do cão em alguns temas diversos. <br>
+    0- Nunca; 1- Raramente; 2- Às vezes; 3- Quase sempre; 4- Sempre.
+  </h1>
+
+  <div class="question"><p>33. Se lambe excessivamente</p>
+    <div class="range-container"><div class="range-row">
+      <input type="number" id="q33Visor" min="0" max="4" value="0" readonly>
+      <input type="range" id="q33Range" name="q33" min="0" max="4" value="0" required onchange="document.getElementById('q33Visor').value=this.value">
+    </div><div class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div></div>
+  </div>
+</div>
+
 
 <!-- STEP 10: Observações finais -->
 <div class="step">
