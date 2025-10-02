@@ -35,11 +35,14 @@
             <h1>1. Informações iniciais</h1>
 
             <p>Escolha a <span class="textoVerde">melhor</span> foto do cachorro (.JPG ou .PNG)</p>
+          
             <input type="file" id="fotoAnimal" name="foto" accept=".jpg,.png" multiple required>
             <div id="previewContainer"></div>
 
+   
             <p>Nome do cachorro:</p>
             <input type="text" name="nome" placeholder="Ex: Luna, Thor, Mel..." required>
+            
 
             <p>Bio do cachorro (mínimo de 80 palavras):</p>
             <textarea name="bio" rows="6" minlength="400" placeholder="Escreva uma descrição detalhada (fale sobre a aparência física, comportamentos diários, personalidade do canino, etc...)." required></textarea>
@@ -53,10 +56,10 @@
             <label><input type="radio" name="porte" value="pequeno" required> Pequeno</label>
             <label><input type="radio" name="porte" value="medio"> Médio</label>
             <label><input type="radio" name="porte" value="grande"> Grande</label>
-
+       
             <p>Raça (ou SRD)</p>
             <input type="text" name="raca" placeholder="Ex: Pastor Alemão, Pug / SRD = Sem raça definida" required>
-
+            
             <p>Idade aproximada</p>
             <input type="number" id="idade_aprox" name="idade_aprox" required>
           </div>
@@ -89,7 +92,7 @@
     <p>1. Obediência para instruções básicas (ex.: sentar, ficar, vir)</p>
     <div class="range-container">
       <div class="range-row">
-        <input type="number" id="q1Visor" min="0" max="4" value="" onchange="document.getElementById('q1Range').value=this.value" readonly>
+        <input type="number" id="q1Visor" min="0" max="4" value="0" onchange="document.getElementById('q1Range').value=this.value" readonly>
         <input type="range" id="q1Range" name="q1" min="0" max="4" value="0" required onchange="document.getElementById('q1Visor').value=this.value">
       </div>
       <div class="ticks">

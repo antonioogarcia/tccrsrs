@@ -88,18 +88,21 @@ input {
 
 .inteiro {
     width: 100%;
+     margin-bottom: 10px;
 }
 
 .doisElementos {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
+    margin-bottom: 10px;
 }
 
 .tresElementos {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
+      margin-bottom: 10px;
     align-items: center;
 }
 
