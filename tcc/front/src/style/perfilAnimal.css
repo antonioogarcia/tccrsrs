@@ -167,3 +167,6 @@ header p:hover {
 .fa-arrow-left:hover {
   color: #197f5a;
 }
+#formaContato {
+    font-weight: 900;
+}

@@ -146,7 +146,7 @@ input::placeholder {
   flex-direction: column;
   gap: 1.5rem;
   max-width: 400px;
-  height: 55vh;
+  height: fit-content;
   box-shadow: 0px -6px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -163,4 +163,23 @@ input::placeholder {
   background-color: #1f1f1f70;
   height: 1px;
   filter: blur(2px);
+}
+.termos {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #1f1f1f;
+  margin-top: 1rem;
+}
+
+.termos input {
+  width: 18px;
+  height: 18px;
+  accent-color: #197f5a; /* cor do check no navegador moderno */
+  cursor: pointer;
+}
+a {
+  color: #197f5a;
 }

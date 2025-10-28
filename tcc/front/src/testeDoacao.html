@@ -44,7 +44,7 @@
             <input type="text" name="nome" placeholder="Ex: Luna, Thor, Mel..." required>
             
 
-            <p>Bio do cachorro (mínimo de 80 palavras):</p>
+            <p>Bio do cachorro:</p>
             <textarea name="bio" rows="6" minlength="400" placeholder="Escreva uma descrição detalhada (fale sobre a aparência física, comportamentos diários, personalidade do canino, etc...)." required></textarea>
           </div>
 
@@ -57,8 +57,10 @@
             <label><input type="radio" name="porte" value="medio"> Médio</label>
             <label><input type="radio" name="porte" value="grande"> Grande</label>
        
-            <p>Raça (ou SRD)</p>
-            <input type="text" name="raca" placeholder="Ex: Pastor Alemão, Pug / SRD = Sem raça definida" required>
+                    <p>Raça (ou SRD)</p>
+            <select id="raca" name="raca" required>
+              <option value="">Carregando raças...</option>
+            </select>
             
             <p>Idade aproximada</p>
             <input type="number" id="idade_aprox" name="idade_aprox" required>
@@ -568,17 +570,36 @@
         </form>
 
         <!-- Modal de crop (mantive sua estrutura) -->
-        <div id="cropModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); justify-content:center; align-items:center; z-index:1000;">
-          <div style="background:white; padding:20px; border-radius:10px; max-width:600px; width:90%;">
-            <h3>Corte a imagem</h3>
-            <div>
-              <img id="imageToCrop" style="max-width:100%;">
-            </div>
-            <br>
-            <button id="cropBtn">Cortar</button>
-            <button id="cancelCrop">Cancelar</button>
-          </div>
-        </div>
+  <div id="cropModal" 
+     style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+            background:rgba(0,0,0,0.7); justify-content:center; align-items:center; 
+            z-index:1000; overflow:auto; padding:20px;">
+  
+  <div style="background:white; padding:20px; border-radius:10px; 
+              max-width:700px; width:100%; box-sizing:border-box;
+              max-height:90vh; overflow:auto; text-align:center;">
+    
+    <h3 style="margin-bottom:15px;">Corte a imagem</h3>
+
+    <div style="display:flex; justify-content:center;">
+      <img id="imageToCrop" 
+           style="max-width:100%; max-height:60vh; object-fit:contain; border-radius:8px;">
+    </div>
+
+    <div style="margin-top:20px; display:flex; justify-content:center; gap:10px;">
+      <button id="cropBtn" 
+              style="padding:8px 16px; border:none; background:#197f5a; color:white; border-radius:5px; cursor:pointer;">
+        Cortar
+      </button>
+      <button id="cancelCrop" 
+              style="padding:8px 16px; border: solid #197f5a; background: transparent; color: #197f5a; border-radius:5px; cursor:pointer;">
+        Cancelar
+      </button>
+    </div>
+
+  </div>
+</div>
+
       </div>
     </main>
     <script src="/tcc/front/src/script/teste.js"></script>

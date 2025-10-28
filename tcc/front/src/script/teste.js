@@ -12,9 +12,7 @@ function showStep(n) {
   prevBtn.style.display = n === 0 ? "none" : "inline-block";
   nextBtn.textContent = n === steps.length - 1 ? "Enviar" : "Confirmar respostas";
   progressBar.style.width = ((n + 1) / steps.length) * 100 + "%";
-
-  // Scroll automático para o topo da página
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 nextBtn.addEventListener("click", () => {
@@ -33,17 +31,27 @@ nextBtn.addEventListener("click", () => {
     }
   });
 
-  // if (!valid) {
-  //   alert("Por favor, preencha todas as perguntas antes de continuar!");
-  //   return;
-  // }
+  // 🔹 Verificação da bio
+  const bioField = steps[currentStep].querySelector('textarea[name="bio"]');
+  if (bioField) {
+    const bioLength = bioField.value.trim().length;
+    if (bioLength < 100) {
+      alert("A bio está muito curta, descreva melhor o cachorro.");
+      return;
+    }
+  }
+
+  if (!valid) {
+    alert("Por favor, preencha todas as perguntas antes de continuar!");
+    return;
+  }
 
   if (currentStep < steps.length - 1) {
     currentStep++;
     showStep(currentStep);
   } else {
     alert("Formulário enviado!");
-    const form = document.querySelector("form"); 
+    const form = document.querySelector("form");
     if (form) form.submit();
   }
 });
@@ -57,6 +65,7 @@ prevBtn.addEventListener("click", () => {
 
 showStep(currentStep);
 
+// 🖼️ Upload múltiplo de fotos
 const fotoInput = document.getElementById("fotoAnimal");
 const previewContainer = document.getElementById("previewContainer");
 
@@ -66,28 +75,52 @@ const cropBtn = document.getElementById("cropBtn");
 const cancelCrop = document.getElementById("cancelCrop");
 
 let cropper;
+let filesQueue = []; // Fila de imagens a serem cortadas
+let isCropping = false;
 
 fotoInput.addEventListener("change", (e) => {
-  const file = e.target.files[0];
-  if (!file) return;
+  filesQueue = Array.from(e.target.files);
+  if (filesQueue.length > 0 && !isCropping) {
+    abrirProximaImagem();
+  }
+});
 
+function abrirProximaImagem() {
+  if (filesQueue.length === 0) {
+    isCropping = false;
+    return;
+  }
+
+  isCropping = true;
+  const file = filesQueue.shift();
   const reader = new FileReader();
+
   reader.onload = (ev) => {
     imageToCrop.src = ev.target.result;
 
+    // Aguarda imagem carregar antes de abrir modal e criar cropper
     imageToCrop.onload = () => {
       cropModal.style.display = "flex";
-      if (cropper) cropper.destroy();
+
+      // Destroi qualquer cropper anterior
+      if (cropper) {
+        cropper.destroy();
+        cropper = null;
+      }
+
+      // Cria novo cropper
       cropper = new Cropper(imageToCrop, {
         aspectRatio: 4 / 3,
         viewMode: 1,
-        autoCropArea: 1
+        autoCropArea: 1,
       });
     };
   };
-  reader.readAsDataURL(file);
-});
 
+  reader.readAsDataURL(file);
+}
+
+// Quando o usuário confirma o corte
 cropBtn.addEventListener("click", () => {
   if (cropper) {
     const canvas = cropper.getCroppedCanvas({ width: 400, height: 300 });
@@ -99,19 +132,66 @@ cropBtn.addEventListener("click", () => {
     croppedImg.style.borderRadius = "8px";
     croppedImg.style.boxShadow = "0 2px 6px rgba(0,0,0,0.2)";
 
-    previewContainer.innerHTML = "";
     previewContainer.appendChild(croppedImg);
 
+    // Fecha modal e prepara próxima imagem
     cropModal.style.display = "none";
     cropper.destroy();
     cropper = null;
+
+    abrirProximaImagem();
   }
 });
 
+// Quando o usuário cancela o corte
 cancelCrop.addEventListener("click", () => {
   cropModal.style.display = "none";
   if (cropper) {
     cropper.destroy();
     cropper = null;
   }
-});
+  abrirProximaImagem();
+});'1                   /'
+
+// 🐶 Select de raças
+async function carregarRacas() {
+  const select = document.getElementById("raca");
+  try {
+    const response = await fetch("https://dog.ceo/api/breeds/list/all");
+    const data = await response.json();
+
+    select.innerHTML = "";
+
+    const srdOption = document.createElement("option");
+    srdOption.value = "SRD";
+    srdOption.textContent = "SRD (Sem Raça Definida)";
+    select.appendChild(srdOption);
+
+    const racas = Object.keys(data.message);
+
+    const populares = [
+      "labrador", "golden retriever", "poodle", "bulldog",
+      "shih tzu", "rottweiler", "pastor alemão", "beagle",
+      "yorkshire", "border collie", "pug", "pinscher"
+    ];
+
+    populares.forEach(raca => {
+      const option = document.createElement("option");
+      option.value = raca;
+      option.textContent = raca.charAt(0).toUpperCase() + raca.slice(1);
+      select.appendChild(option);
+    });
+
+    racas.forEach(raca => {
+      const option = document.createElement("option");
+      option.value = raca;
+      option.textContent = raca.charAt(0).toUpperCase() + raca.slice(1);
+      select.appendChild(option);
+    });
+  } catch (error) {
+    console.error("Erro ao carregar raças:", error);
+    select.innerHTML = "<option>Erro ao carregar raças</option>";
+  }
+}
+
+carregarRacas();

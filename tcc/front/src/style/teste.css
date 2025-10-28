@@ -143,7 +143,7 @@ button:hover {
 /* ======== INPUTS E TEXTAREA ======== */
 input[type="text"],
 #idade_aprox,
-textarea {
+textarea, #raca {
   color: #197f5a;
   width: 100%;
   max-width: 100%; /* evita overflow */
@@ -153,6 +153,7 @@ textarea {
   font-family: "Inter", sans-serif;
   background-color: transparent;
   font-weight: 500;
+  outline: none;
 }
 
 input[type="text"] {
@@ -295,7 +296,9 @@ input[type="range"]::-moz-range-thumb {
   text-align: center;
   margin: 20px 0;
 }
-
+p {
+  margin-bottom: 5px;
+}
 /* ===============================
    RESPONSIVIDADE
 ================================ */
