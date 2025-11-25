@@ -1,4 +1,3 @@
-// carrossel
 const slider = document.querySelectorAll('.slider');
 const setaE = document.getElementById('setaE');
 const setaD = document.getElementById('setaD');
@@ -6,38 +5,24 @@ const setaD = document.getElementById('setaD');
 let atualImg = 0;
 
 function esconder() {
-    slider.forEach(item => item.classList.remove('on'))
-};
+    slider.forEach(item => item.classList.remove('on'));
+}
 
 function mostrar() {
-    slider[atualImg].classList.add('on')
-};
+    slider[atualImg].classList.add('on');
+}
 
 function proxImg() {
-    esconder()
-    if(atualImg === slider.length -2) {
-        atualImg = 0
-    } else {
-        atualImg++
-    }
-    mostrar()
+    esconder();
+    atualImg = (atualImg + 1) % slider.length;
+    mostrar();
 }
 
 function voltarImg() {
-    esconder()
-    if(atualImg === 0) {
-        atualImg = slider.length -1
-    } else {
-        atualImg--
-    }
-    mostrar()
+    esconder();
+    atualImg = (atualImg - 1 + slider.length) % slider.length;
+    mostrar();
 }
 
-setaD.addEventListener('click', proxImg)
-setaE.addEventListener('click', voltarImg)
-
-//
-
-// slider infinito 
-const copy = document.querySelector(".logos-slide").cloneNode(true);
-document.querySelector(".logos").appendChild(copy);
+setaD.addEventListener('click', proxImg);
+setaE.addEventListener('click', voltarImg);

@@ -107,8 +107,8 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 85vw;
-    height: 63vh;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.687);
 }
@@ -118,6 +118,9 @@ p {
     height: 63vh;
     opacity: 0;
     transition: opacity 0.3s ease-in;
+    
+    object-fit: cover;       /* Faz a imagem preencher sem distorcer */
+    object-position: center; 
 }
 #setaE, #setaD {
     position: relative;
@@ -153,6 +156,8 @@ p {
 }
 .assunto3 img {
     height: 45vh;
+    border-radius: 12px;
+    box-shadow: 2px 2px 8px 5px rgba(0,0,0,0.18);
     transition: 0.3s ease-in;
 }
 .assunto3 img:hover {
